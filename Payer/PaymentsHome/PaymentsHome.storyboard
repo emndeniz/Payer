@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Payments Home View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="PaymentsHomeViewController" id="zIc-eW-6fX" customClass="PaymentsHomeViewController" customModule="Payer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-Dl-7fb" userLabel="TransactionTable" customClass="TransactionHistoryTable" customModule="Payer" customModuleProvider="target">
+                                <rect key="frame" x="8" y="320" width="374" height="524"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-MX-iAG" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bce-g8-an2">
+                                        <rect key="frame" x="150" y="50" width="90" height="23"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfx-nS-Azy">
+                                        <rect key="frame" x="40" y="77" width="310" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBz-hV-qcW" customClass="CreditCardView" customModule="Payer" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="140" width="330" height="180"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="Dtv-M6-5WY"/>
+                                            <constraint firstAttribute="width" constant="330" id="iHV-Cx-NpL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="SecondaryColor"/>
+                                <constraints>
+                                    <constraint firstItem="bce-g8-an2" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="150" id="6Hv-5F-75h"/>
+                                    <constraint firstAttribute="trailing" secondItem="qfx-nS-Azy" secondAttribute="trailing" constant="40" id="Cum-mt-CRM"/>
+                                    <constraint firstAttribute="trailing" secondItem="bce-g8-an2" secondAttribute="trailing" constant="150" id="O26-lM-ART"/>
+                                    <constraint firstItem="JBz-hV-qcW" firstAttribute="top" secondItem="qfx-nS-Azy" secondAttribute="bottom" constant="15" id="Szy-Lb-T3c"/>
+                                    <constraint firstAttribute="bottom" secondItem="JBz-hV-qcW" secondAttribute="bottom" constant="-50" id="Xed-7H-paM"/>
+                                    <constraint firstItem="qfx-nS-Azy" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="40" id="Z1q-sm-7ue"/>
+                                    <constraint firstAttribute="height" constant="270" id="cdv-vL-3GG"/>
+                                    <constraint firstItem="qfx-nS-Azy" firstAttribute="top" secondItem="bce-g8-an2" secondAttribute="bottom" constant="4" id="iOA-Zk-Jj7"/>
+                                    <constraint firstItem="bce-g8-an2" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="top" constant="50" id="rG4-fI-GkX"/>
+                                    <constraint firstAttribute="trailing" secondItem="JBz-hV-qcW" secondAttribute="trailing" constant="30" id="siS-RW-7qL"/>
+                                    <constraint firstItem="JBz-hV-qcW" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="30" id="vmg-g0-8uD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e9K-Dl-7fb" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="8" id="5ep-aX-Ry6"/>
+                            <constraint firstItem="e9K-Dl-7fb" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" constant="-8" id="7AV-Du-5i2"/>
+                            <constraint firstItem="e9K-Dl-7fb" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="bottom" constant="50" id="ExJ-rN-Piy"/>
+                            <constraint firstItem="vwP-MX-iAG" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" id="PcS-Pz-MJW"/>
+                            <constraint firstItem="vwP-MX-iAG" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="aeA-8I-Ito"/>
+                            <constraint firstItem="vwP-MX-iAG" firstAttribute="top" secondItem="Z2g-4m-atm" secondAttribute="top" id="hS3-kt-LaB"/>
+                            <constraint firstAttribute="bottom" secondItem="e9K-Dl-7fb" secondAttribute="bottom" id="nd1-5x-bKf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qxb-gD-jP7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733.84615384615381" y="376.77725118483409"/>
+        </scene>
+        <!--Payments Navigation View Controller-->
+        <scene sceneID="YYW-em-OgH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ajf-bE-d3a" customClass="PaymentsNavigationViewController" customModule="Payer" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OAV-Kr-4eV">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zIc-eW-6fX" kind="relationship" relationship="rootViewController" id="Qei-gf-ghp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8U8-NV-nqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="321"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="SecondaryColor">
+            <color red="0.3411764705882353" green="0.66666666666666663" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
