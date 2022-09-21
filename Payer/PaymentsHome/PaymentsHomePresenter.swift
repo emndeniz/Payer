@@ -34,4 +34,20 @@ final class PaymentsHomePresenter {
 // MARK: - Extensions -
 
 extension PaymentsHomePresenter: PaymentsHomePresenterInterface {
+    func saveTransaction(transaction: TransactionItem) {
+        interactor.saveTransaction(transaction: transaction)
+    }
+    
+    func saveCard(card: BankCardItem) {
+        interactor.saveCard(card: card)
+    }
+    
+    func loadCardData() -> [BankCardItem] {
+        interactor.loadCardData()
+    }
+    
+    func loadTransactions() -> [TransactionItem] {
+        interactor.loadTransactions()
+    }
+    
 }

@@ -80,6 +80,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qxb-gD-jP7"/>
+                    <connections>
+                        <outlet property="balanceAmount" destination="qfx-nS-Azy" id="fYs-cA-2di"/>
+                        <outlet property="balanceLabel" destination="bce-g8-an2" id="1Sg-8o-SpX"/>
+                        <outlet property="creditCardView" destination="JBz-hV-qcW" id="o2G-gG-2wU"/>
+                        <outlet property="headerView" destination="vwP-MX-iAG" id="H3a-K0-WUC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
