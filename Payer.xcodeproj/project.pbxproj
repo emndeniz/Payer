@@ -17,6 +17,24 @@
 		0133CE2928DA602C00AAD8B2 /* PayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE2828DA602C00AAD8B2 /* PayerTests.swift */; };
 		0133CE3328DA602C00AAD8B2 /* PayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE3228DA602C00AAD8B2 /* PayerUITests.swift */; };
 		0133CE3528DA602C00AAD8B2 /* PayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE3428DA602C00AAD8B2 /* PayerUITestsLaunchTests.swift */; };
+		0133CE4728DA620700AAD8B2 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4228DA620700AAD8B2 /* BaseWireframe.swift */; };
+		0133CE4828DA620700AAD8B2 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4328DA620700AAD8B2 /* UIStoryboardExtension.swift */; };
+		0133CE4928DA620700AAD8B2 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4428DA620700AAD8B2 /* PresenterInterface.swift */; };
+		0133CE4A28DA620700AAD8B2 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4528DA620700AAD8B2 /* ViewInterface.swift */; };
+		0133CE4B28DA620700AAD8B2 /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4628DA620700AAD8B2 /* InteractorInterface.swift */; };
+		0133CE5328DA622F00AAD8B2 /* PaymentsHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE4D28DA622F00AAD8B2 /* PaymentsHome.storyboard */; };
+		0133CE5428DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4E28DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift */; };
+		0133CE5528DA622F00AAD8B2 /* PaymentsHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE4F28DA622F00AAD8B2 /* PaymentsHomePresenter.swift */; };
+		0133CE5628DA622F00AAD8B2 /* PaymentsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE5028DA622F00AAD8B2 /* PaymentsHomeViewController.swift */; };
+		0133CE5728DA622F00AAD8B2 /* PaymentsHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE5128DA622F00AAD8B2 /* PaymentsHomeInteractor.swift */; };
+		0133CE5828DA622F00AAD8B2 /* PaymentsHomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE5228DA622F00AAD8B2 /* PaymentsHomeWireframe.swift */; };
+		0133CE5A28DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE5928DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift */; };
+		0133CE5E28DA67AC00AAD8B2 /* CreditCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE5D28DA67AC00AAD8B2 /* CreditCardView.swift */; };
+		0133CE6028DA67EE00AAD8B2 /* CreditCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE5F28DA67EE00AAD8B2 /* CreditCardView.xib */; };
+		0133CE6328DB266300AAD8B2 /* TransactionHistoryTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE6228DB266300AAD8B2 /* TransactionHistoryTable.xib */; };
+		0133CE6528DB269500AAD8B2 /* TransactionHistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE6428DB269500AAD8B2 /* TransactionHistoryTable.swift */; };
+		0133CE6E28DB341800AAD8B2 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE6C28DB341800AAD8B2 /* TransactionsTableViewCell.swift */; };
+		0133CE6F28DB341800AAD8B2 /* TransactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE6D28DB341800AAD8B2 /* TransactionsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +69,24 @@
 		0133CE2E28DA602C00AAD8B2 /* PayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133CE3228DA602C00AAD8B2 /* PayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerUITests.swift; sourceTree = "<group>"; };
 		0133CE3428DA602C00AAD8B2 /* PayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0133CE4228DA620700AAD8B2 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		0133CE4328DA620700AAD8B2 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		0133CE4428DA620700AAD8B2 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
+		0133CE4528DA620700AAD8B2 /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
+		0133CE4628DA620700AAD8B2 /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		0133CE4D28DA622F00AAD8B2 /* PaymentsHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentsHome.storyboard; sourceTree = "<group>"; };
+		0133CE4E28DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsHomeInterfaces.swift; sourceTree = "<group>"; };
+		0133CE4F28DA622F00AAD8B2 /* PaymentsHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsHomePresenter.swift; sourceTree = "<group>"; };
+		0133CE5028DA622F00AAD8B2 /* PaymentsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsHomeViewController.swift; sourceTree = "<group>"; };
+		0133CE5128DA622F00AAD8B2 /* PaymentsHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsHomeInteractor.swift; sourceTree = "<group>"; };
+		0133CE5228DA622F00AAD8B2 /* PaymentsHomeWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsHomeWireframe.swift; sourceTree = "<group>"; };
+		0133CE5928DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsNavigationViewController.swift; sourceTree = "<group>"; };
+		0133CE5D28DA67AC00AAD8B2 /* CreditCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardView.swift; sourceTree = "<group>"; };
+		0133CE5F28DA67EE00AAD8B2 /* CreditCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardView.xib; sourceTree = "<group>"; };
+		0133CE6228DB266300AAD8B2 /* TransactionHistoryTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryTable.xib; sourceTree = "<group>"; };
+		0133CE6428DB269500AAD8B2 /* TransactionHistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTable.swift; sourceTree = "<group>"; };
+		0133CE6C28DB341800AAD8B2 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewCell.swift; sourceTree = "<group>"; };
+		0133CE6D28DB341800AAD8B2 /* TransactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +137,9 @@
 		0133CE0D28DA602A00AAD8B2 /* Payer */ = {
 			isa = PBXGroup;
 			children = (
+				0133CE5B28DA677E00AAD8B2 /* Components */,
+				0133CE4128DA620700AAD8B2 /* BaseViper */,
+				0133CE4C28DA621000AAD8B2 /* PaymentsHome */,
 				0133CE0E28DA602A00AAD8B2 /* AppDelegate.swift */,
 				0133CE1028DA602A00AAD8B2 /* SceneDelegate.swift */,
 				0133CE1228DA602A00AAD8B2 /* ViewController.swift */,
@@ -128,6 +167,69 @@
 				0133CE3428DA602C00AAD8B2 /* PayerUITestsLaunchTests.swift */,
 			);
 			path = PayerUITests;
+			sourceTree = "<group>";
+		};
+		0133CE4128DA620700AAD8B2 /* BaseViper */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE4228DA620700AAD8B2 /* BaseWireframe.swift */,
+				0133CE4328DA620700AAD8B2 /* UIStoryboardExtension.swift */,
+				0133CE4428DA620700AAD8B2 /* PresenterInterface.swift */,
+				0133CE4528DA620700AAD8B2 /* ViewInterface.swift */,
+				0133CE4628DA620700AAD8B2 /* InteractorInterface.swift */,
+			);
+			path = BaseViper;
+			sourceTree = "<group>";
+		};
+		0133CE4C28DA621000AAD8B2 /* PaymentsHome */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE4D28DA622F00AAD8B2 /* PaymentsHome.storyboard */,
+				0133CE4E28DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift */,
+				0133CE4F28DA622F00AAD8B2 /* PaymentsHomePresenter.swift */,
+				0133CE5028DA622F00AAD8B2 /* PaymentsHomeViewController.swift */,
+				0133CE5128DA622F00AAD8B2 /* PaymentsHomeInteractor.swift */,
+				0133CE5228DA622F00AAD8B2 /* PaymentsHomeWireframe.swift */,
+				0133CE5928DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift */,
+			);
+			path = PaymentsHome;
+			sourceTree = "<group>";
+		};
+		0133CE5B28DA677E00AAD8B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE6128DB265000AAD8B2 /* TransactionHistoryTable */,
+				0133CE5C28DA678500AAD8B2 /* CreditCardComponent */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0133CE5C28DA678500AAD8B2 /* CreditCardComponent */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE5D28DA67AC00AAD8B2 /* CreditCardView.swift */,
+				0133CE5F28DA67EE00AAD8B2 /* CreditCardView.xib */,
+			);
+			path = CreditCardComponent;
+			sourceTree = "<group>";
+		};
+		0133CE6128DB265000AAD8B2 /* TransactionHistoryTable */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE6728DB2E1100AAD8B2 /* TransactionCell */,
+				0133CE6228DB266300AAD8B2 /* TransactionHistoryTable.xib */,
+				0133CE6428DB269500AAD8B2 /* TransactionHistoryTable.swift */,
+			);
+			path = TransactionHistoryTable;
+			sourceTree = "<group>";
+		};
+		0133CE6728DB2E1100AAD8B2 /* TransactionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE6C28DB341800AAD8B2 /* TransactionsTableViewCell.swift */,
+				0133CE6D28DB341800AAD8B2 /* TransactionsTableViewCell.xib */,
+			);
+			path = TransactionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +336,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0133CE5328DA622F00AAD8B2 /* PaymentsHome.storyboard in Resources */,
+				0133CE6028DA67EE00AAD8B2 /* CreditCardView.xib in Resources */,
+				0133CE6F28DB341800AAD8B2 /* TransactionsTableViewCell.xib in Resources */,
 				0133CE1E28DA602C00AAD8B2 /* LaunchScreen.storyboard in Resources */,
 				0133CE1B28DA602C00AAD8B2 /* Assets.xcassets in Resources */,
+				0133CE6328DB266300AAD8B2 /* TransactionHistoryTable.xib in Resources */,
 				0133CE1628DA602A00AAD8B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +367,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0133CE5628DA622F00AAD8B2 /* PaymentsHomeViewController.swift in Sources */,
 				0133CE1328DA602A00AAD8B2 /* ViewController.swift in Sources */,
+				0133CE4728DA620700AAD8B2 /* BaseWireframe.swift in Sources */,
+				0133CE5728DA622F00AAD8B2 /* PaymentsHomeInteractor.swift in Sources */,
+				0133CE6528DB269500AAD8B2 /* TransactionHistoryTable.swift in Sources */,
+				0133CE4A28DA620700AAD8B2 /* ViewInterface.swift in Sources */,
 				0133CE0F28DA602A00AAD8B2 /* AppDelegate.swift in Sources */,
 				0133CE1128DA602A00AAD8B2 /* SceneDelegate.swift in Sources */,
+				0133CE5528DA622F00AAD8B2 /* PaymentsHomePresenter.swift in Sources */,
+				0133CE5828DA622F00AAD8B2 /* PaymentsHomeWireframe.swift in Sources */,
+				0133CE4828DA620700AAD8B2 /* UIStoryboardExtension.swift in Sources */,
+				0133CE5A28DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift in Sources */,
+				0133CE4B28DA620700AAD8B2 /* InteractorInterface.swift in Sources */,
+				0133CE6E28DB341800AAD8B2 /* TransactionsTableViewCell.swift in Sources */,
+				0133CE5428DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift in Sources */,
 				0133CE1928DA602A00AAD8B2 /* Payer.xcdatamodeld in Sources */,
+				0133CE4928DA620700AAD8B2 /* PresenterInterface.swift in Sources */,
+				0133CE5E28DA67AC00AAD8B2 /* CreditCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
