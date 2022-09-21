@@ -35,6 +35,13 @@
 		0133CE6528DB269500AAD8B2 /* TransactionHistoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE6428DB269500AAD8B2 /* TransactionHistoryTable.swift */; };
 		0133CE6E28DB341800AAD8B2 /* TransactionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE6C28DB341800AAD8B2 /* TransactionsTableViewCell.swift */; };
 		0133CE6F28DB341800AAD8B2 /* TransactionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE6D28DB341800AAD8B2 /* TransactionsTableViewCell.xib */; };
+		0133CE7228DB545500AAD8B2 /* PayerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE7128DB545500AAD8B2 /* PayerStore.swift */; };
+		0133CE7428DB548200AAD8B2 /* BankCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE7328DB548200AAD8B2 /* BankCardItem.swift */; };
+		0133CE7628DB549500AAD8B2 /* TransactionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE7528DB549500AAD8B2 /* TransactionItem.swift */; };
+		0133CE7828DB55DA00AAD8B2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE7728DB55DA00AAD8B2 /* CoreDataStack.swift */; };
+		0133CE7B28DB579700AAD8B2 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 0133CE7A28DB579700AAD8B2 /* SwiftyBeaver */; };
+		0133CE7E28DB57A500AAD8B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE7D28DB57A500AAD8B2 /* Logger.swift */; };
+		0133CE8628DB738B00AAD8B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE8828DB738B00AAD8B2 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +94,13 @@
 		0133CE6428DB269500AAD8B2 /* TransactionHistoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTable.swift; sourceTree = "<group>"; };
 		0133CE6C28DB341800AAD8B2 /* TransactionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewCell.swift; sourceTree = "<group>"; };
 		0133CE6D28DB341800AAD8B2 /* TransactionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsTableViewCell.xib; sourceTree = "<group>"; };
+		0133CE7128DB545500AAD8B2 /* PayerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayerStore.swift; sourceTree = "<group>"; };
+		0133CE7328DB548200AAD8B2 /* BankCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCardItem.swift; sourceTree = "<group>"; };
+		0133CE7528DB549500AAD8B2 /* TransactionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItem.swift; sourceTree = "<group>"; };
+		0133CE7728DB55DA00AAD8B2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0133CE7D28DB57A500AAD8B2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0133CE8728DB738B00AAD8B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0133CE9328DB756E00AAD8B2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0133CE7B28DB579700AAD8B2 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +152,8 @@
 		0133CE0D28DA602A00AAD8B2 /* Payer */ = {
 			isa = PBXGroup;
 			children = (
+				0133CE7C28DB579C00AAD8B2 /* Utils */,
+				0133CE7028DB543100AAD8B2 /* Persistency */,
 				0133CE5B28DA677E00AAD8B2 /* Components */,
 				0133CE4128DA620700AAD8B2 /* BaseViper */,
 				0133CE4C28DA621000AAD8B2 /* PaymentsHome */,
@@ -148,6 +165,7 @@
 				0133CE1C28DA602C00AAD8B2 /* LaunchScreen.storyboard */,
 				0133CE1F28DA602C00AAD8B2 /* Info.plist */,
 				0133CE1728DA602A00AAD8B2 /* Payer.xcdatamodeld */,
+				0133CE8828DB738B00AAD8B2 /* Localizable.strings */,
 			);
 			path = Payer;
 			sourceTree = "<group>";
@@ -232,6 +250,25 @@
 			path = TransactionCell;
 			sourceTree = "<group>";
 		};
+		0133CE7028DB543100AAD8B2 /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE7128DB545500AAD8B2 /* PayerStore.swift */,
+				0133CE7328DB548200AAD8B2 /* BankCardItem.swift */,
+				0133CE7528DB549500AAD8B2 /* TransactionItem.swift */,
+				0133CE7728DB55DA00AAD8B2 /* CoreDataStack.swift */,
+			);
+			path = Persistency;
+			sourceTree = "<group>";
+		};
+		0133CE7C28DB579C00AAD8B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE7D28DB57A500AAD8B2 /* Logger.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -248,6 +285,9 @@
 			dependencies = (
 			);
 			name = Payer;
+			packageProductDependencies = (
+				0133CE7A28DB579700AAD8B2 /* SwiftyBeaver */,
+			);
 			productName = Payer;
 			productReference = 0133CE0B28DA602A00AAD8B2 /* Payer.app */;
 			productType = "com.apple.product-type.application";
@@ -318,8 +358,12 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 0133CE0228DA602A00AAD8B2;
+			packageReferences = (
+				0133CE7928DB579700AAD8B2 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+			);
 			productRefGroup = 0133CE0C28DA602A00AAD8B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +385,7 @@
 				0133CE6F28DB341800AAD8B2 /* TransactionsTableViewCell.xib in Resources */,
 				0133CE1E28DA602C00AAD8B2 /* LaunchScreen.storyboard in Resources */,
 				0133CE1B28DA602C00AAD8B2 /* Assets.xcassets in Resources */,
+				0133CE8628DB738B00AAD8B2 /* Localizable.strings in Resources */,
 				0133CE6328DB266300AAD8B2 /* TransactionHistoryTable.xib in Resources */,
 				0133CE1628DA602A00AAD8B2 /* Main.storyboard in Resources */,
 			);
@@ -376,11 +421,16 @@
 				0133CE0F28DA602A00AAD8B2 /* AppDelegate.swift in Sources */,
 				0133CE1128DA602A00AAD8B2 /* SceneDelegate.swift in Sources */,
 				0133CE5528DA622F00AAD8B2 /* PaymentsHomePresenter.swift in Sources */,
+				0133CE7E28DB57A500AAD8B2 /* Logger.swift in Sources */,
 				0133CE5828DA622F00AAD8B2 /* PaymentsHomeWireframe.swift in Sources */,
 				0133CE4828DA620700AAD8B2 /* UIStoryboardExtension.swift in Sources */,
 				0133CE5A28DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift in Sources */,
 				0133CE4B28DA620700AAD8B2 /* InteractorInterface.swift in Sources */,
+				0133CE7628DB549500AAD8B2 /* TransactionItem.swift in Sources */,
 				0133CE6E28DB341800AAD8B2 /* TransactionsTableViewCell.swift in Sources */,
+				0133CE7428DB548200AAD8B2 /* BankCardItem.swift in Sources */,
+				0133CE7228DB545500AAD8B2 /* PayerStore.swift in Sources */,
+				0133CE7828DB55DA00AAD8B2 /* CoreDataStack.swift in Sources */,
 				0133CE5428DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift in Sources */,
 				0133CE1928DA602A00AAD8B2 /* Payer.xcdatamodeld in Sources */,
 				0133CE4928DA620700AAD8B2 /* PresenterInterface.swift in Sources */,
@@ -437,6 +487,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		0133CE8828DB738B00AAD8B2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0133CE8728DB738B00AAD8B2 /* en */,
+				0133CE9328DB756E00AAD8B2 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -444,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -504,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -726,6 +787,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0133CE7928DB579700AAD8B2 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0133CE7A28DB579700AAD8B2 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0133CE7928DB579700AAD8B2 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0133CE1728DA602A00AAD8B2 /* Payer.xcdatamodeld */ = {

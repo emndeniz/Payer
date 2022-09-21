@@ -11,9 +11,37 @@
 import Foundation
 
 final class PaymentsHomeInteractor {
+    private let coreDataStack: CoreDataStack = CoreDataStack()
+    private var payerStore: PayerStoreProtocol
+    
+    init (payerStore: PayerStoreProtocol? = nil){
+        // Allows injection
+        if let payerStore = payerStore {
+            self.payerStore = payerStore
+        }else {
+            self.payerStore =  PayerStore(managedObjectContext: coreDataStack.mainContext, coreDataStack: coreDataStack)
+        }
+       
+    }
 }
 
 // MARK: - Extensions -
 
 extension PaymentsHomeInteractor: PaymentsHomeInteractorInterface {
+    func saveTransaction(transaction: TransactionItem) {
+        payerStore.saveTransaction(transaction: transaction)
+    }
+    
+    func saveCard(card: BankCardItem) {
+        payerStore.saveCardInfo(card: card)
+    }
+    
+    func loadCardData() -> [BankCardItem] {
+       return payerStore.getCardInfo()
+    }
+    
+    func loadTransactions() -> [TransactionItem] {
+        return payerStore.getTransactions()
+    }
+    
 }

@@ -14,10 +14,19 @@ protocol PaymentsHomeWireframeInterface: WireframeInterface {
 }
 
 protocol PaymentsHomeViewInterface: ViewInterface {
+    func setCardDataToUI()
 }
 
 protocol PaymentsHomePresenterInterface: PresenterInterface {
+    func loadCardData() -> [BankCardItem]
+    func loadTransactions() -> [TransactionItem]
+    func saveTransaction(transaction:TransactionItem)
+    func saveCard(card:BankCardItem)
 }
 
 protocol PaymentsHomeInteractorInterface: InteractorInterface {
+    func loadCardData() -> [BankCardItem]
+    func loadTransactions() -> [TransactionItem]
+    func saveTransaction(transaction:TransactionItem)
+    func saveCard(card:BankCardItem)
 }

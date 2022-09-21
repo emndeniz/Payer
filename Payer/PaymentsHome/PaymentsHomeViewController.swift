@@ -14,7 +14,13 @@ final class PaymentsHomeViewController: UIViewController {
 
     // MARK: - Public properties -
 
-    @IBOutlet weak var walletLogo: UIImageView!
+    @IBOutlet weak var headerView: UIView!
+    
+    @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var balanceAmount: UILabel!
+    
+    @IBOutlet weak var creditCardView: CreditCardView!
+    
     var presenter: PaymentsHomePresenterInterface!
 
     // MARK: - Lifecycle -
@@ -23,11 +29,28 @@ final class PaymentsHomeViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+//        let bankcard = BankCardItem(userName: "Mehmet Emin Deniz",
+//                                    cardNumber: "5123-4567-7680-6742",
+//                                    expirationDate: Date(timeIntervalSince1970: 1726934694),
+//                                    vendor: "MasterCard",
+//                                    balance: 1_578_234,
+//                                    ccv: 123)
+        //presenter.saveCard(card: bankcard)
+        let card = presenter.loadCardData()
+        
+        creditCardView.cardNumber.text = card[0].cardNumber
+        creditCardView.userName.text = card[0].userName
     }
+    
+    
 
 }
 
 // MARK: - Extensions -
 
 extension PaymentsHomeViewController: PaymentsHomeViewInterface {
+    func setCardDataToUI() {
+        
+    }
+    
 }

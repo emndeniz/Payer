@@ -15,6 +15,13 @@ class CreditCardView: UIView {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var company: UIImageView!
     
+    @IBOutlet weak var expLabel: UILabel!
+    @IBOutlet weak var expDate: UILabel!
+    
+    @IBOutlet weak var cvvLabel: UILabel!
+    
+    @IBOutlet weak var cvvDate: UILabel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -25,13 +32,38 @@ class CreditCardView: UIView {
         commonInit()
     }
     
-    private func commonInit() {
+    private func commonInit(model:CardUIViewModel?=nil) {
         Bundle.main.loadNibNamed(String(describing: CreditCardView.self), owner: self, options: nil)
         addSubview(contentView)
         
-        cardNumber.text =  "1235"
+        
+        expLabel.text = NSLocalizedString("expLabel",comment: "")
+        cvvLabel.text = NSLocalizedString("cvvLabel",comment: "")
+        
+        guard let model = model else {
+            return
+        }
+
+        
+        cardNumber.text = model.cardNumber
+        userName.text = model.userName
+        
+  
     }
     
     
 
+}
+
+struct CardUIViewModel {
+    let userName: String
+    let cardNumber: String
+    let cvc: String
+    let expDate: String
+    let vendor: String
+}
+
+enum CardVendors: String {
+    case masterCard
+    case visa
 }
