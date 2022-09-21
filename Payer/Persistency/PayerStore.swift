@@ -9,15 +9,15 @@ import Foundation
 import CoreData
 
 protocol PayerStoreProtocol {
-    func getCardInfo() -> [BankCardItem]
-    func getTransactions() -> [TransactionItem]
+    func getCardInfo(completion: @escaping ((Result<[BankCardItem], Error>) -> Void))
+    func getTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void))
     
-    @discardableResult
-    func saveTransaction(transaction:TransactionItem) -> TransactionData
-    
-    @discardableResult
-    func saveCardInfo(card:BankCardItem) -> BankCardData
+    func saveTransaction(transaction:TransactionItem,
+                         completion: @escaping ((Result<TransactionData, Error>) -> Void))
+    func saveCardInfo(card:BankCardItem,
+                      completion: @escaping ((Result<BankCardData, Error>) -> Void))
 }
+
 
 class PayerStore : PayerStoreProtocol {
 
@@ -32,7 +32,83 @@ class PayerStore : PayerStoreProtocol {
       self.coreDataStack = coreDataStack
     }
 
-    func getCardInfo() -> [BankCardItem] {
+    func getCardInfo(completion: @escaping ((Result<[BankCardItem], Error>) -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            if self.cardInfoGetAPICallCount == 10 {
+                // Fail
+                let err = NSError(domain: "Failed to fetch data", code: 404)
+                completion(.failure(err))
+            }else {
+                completion(.success(self.getCardInfoItems()))
+            }
+        }
+
+    }
+    
+    func getTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            if self.cardInfoGetAPICallCount == 10 {
+                // Fail
+                let err = NSError(domain: "Failed to fetch data", code: 404)
+                completion(.failure(err))
+            }else {
+                completion(.success(self.getTransactionsItems()))
+            }
+        }
+    
+    }
+    
+    func saveTransaction(transaction:TransactionItem,
+                         completion: @escaping ((Result<TransactionData, Error>) -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            if self.cardInfoGetAPICallCount == 10 {
+                // Fail
+                let err = NSError(domain: "Failed to save data", code: 404)
+                completion(.failure(err))
+            }else {
+                completion(.success(self.saveTransactionItems(transaction: transaction)))
+            }
+        }
+    }
+    
+    func saveCardInfo(card:BankCardItem, completion: @escaping ((Result<BankCardData, Error>) -> Void)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            if self.cardInfoGetAPICallCount == 10 {
+                // Fail
+                let err = NSError(domain: "Failed to save data", code: 404)
+                completion(.failure(err))
+            }else {
+                completion(.success(self.saveCardInfoItems(card: card)))
+            }
+        }
+    }
+    
+    // Those counts required for fail cases.
+    private var cardInfoGetAPICallCount: Int {
+        return UserDefaults.standard.integer(forKey: APICallCounts.cardInfoGetAPICallCount.rawValue)
+    }
+    
+    private var cardInfoSaveAPICallCount: Int {
+        return UserDefaults.standard.integer(forKey: APICallCounts.cardInfoSaveAPICallCount.rawValue)
+    }
+    
+    private var transactionInfoGetAPICallCount: Int {
+        return UserDefaults.standard.integer(forKey: APICallCounts.transactionInfoGetAPICallCount.rawValue)
+    }
+    
+    private var transactionInfoSaveAPICallCount: Int {
+        return UserDefaults.standard.integer(forKey: APICallCounts.transactionInfoSaveAPICallCount.rawValue)
+    }
+    
+}
+
+extension PayerStore {
+    
+    private func getCardInfoItems() -> [BankCardItem] {
         let bankCardDataItems = loadCardsCoreData()
         var bankCards: [BankCardItem] = []
         
@@ -44,7 +120,7 @@ class PayerStore : PayerStoreProtocol {
         
     }
     
-    func getTransactions() -> [TransactionItem] {
+    private func getTransactionsItems() -> [TransactionItem] {
         let transactionDataItems = loadTransactionsCoreData()
         var transactions: [TransactionItem] = []
         
@@ -55,21 +131,18 @@ class PayerStore : PayerStoreProtocol {
         return transactions
     }
     
-    func saveTransaction(transaction: TransactionItem) -> TransactionData {
+    private func saveTransactionItems(transaction: TransactionItem) -> TransactionData {
         let transactionData = transaction.toData(managedObjectContext: managedObjectContext)
         coreDataStack.saveContext()
         return transactionData
     }
     
-    func saveCardInfo(card: BankCardItem) -> BankCardData {
+    private func saveCardInfoItems(card: BankCardItem) -> BankCardData {
         let cardData = card.toData(managedObjectContext: managedObjectContext)
         coreDataStack.saveContext()
         return cardData
     }
     
-}
-
-extension PayerStore {
     /// Loads items from Core Data
     /// - Returns: BankCard Data Array
     private func loadCardsCoreData() -> [BankCardData]{
@@ -101,6 +174,13 @@ extension PayerStore {
         
         return []
     }
+}
+
+enum APICallCounts: String {
+    case cardInfoGetAPICallCount
+    case cardInfoSaveAPICallCount
+    case transactionInfoGetAPICallCount
+    case transactionInfoSaveAPICallCount
 }
 
 

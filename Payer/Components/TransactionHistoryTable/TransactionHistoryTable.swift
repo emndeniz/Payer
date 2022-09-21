@@ -11,6 +11,13 @@ class TransactionHistoryTable: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var tableViewData : [TransactionItem] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     private let cellIddentifier = String(describing: TransactionsTableViewCell.self)
     override init(frame: CGRect) {
         super.init(frame: frame)

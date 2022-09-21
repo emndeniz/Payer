@@ -10,3 +10,12 @@
 // Default labels
 "expLabel" = "EXP:";
 "cvvLabel" = "CVV:";
+
+
+
+
+// Error Messages
+"error_title" = "Error";
+"error_FailedToFetchCardData" = "Failed to fetch card data, please try again.";
+"error_FailedToFetchTransactions" = "Failed to fetch transactions, please try again.";
+"error_FailedToSaveTransaction" = "Payment failed, please try again.";

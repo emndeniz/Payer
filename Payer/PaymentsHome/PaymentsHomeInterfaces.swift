@@ -11,22 +11,24 @@
 import UIKit
 
 protocol PaymentsHomeWireframeInterface: WireframeInterface {
+    func routeToTransactionDetails(item:TransactionItem)
+    func routeToTransactionScene()
 }
 
 protocol PaymentsHomeViewInterface: ViewInterface {
-    func setCardDataToUI()
+    func stopIndicator()
+    func updateCard(cardModel: CardUIViewModel)
+    func updateTable(transactions:[TransactionItem])
 }
 
 protocol PaymentsHomePresenterInterface: PresenterInterface {
-    func loadCardData() -> [BankCardItem]
-    func loadTransactions() -> [TransactionItem]
-    func saveTransaction(transaction:TransactionItem)
-    func saveCard(card:BankCardItem)
+    func viewDidLoad()
+    var numberOfRows: Int { get }
+    func transactionAtIndex(index:Int) -> TransactionItem
+    func didSelectRow(index:Int)
 }
 
 protocol PaymentsHomeInteractorInterface: InteractorInterface {
-    func loadCardData() -> [BankCardItem]
-    func loadTransactions() -> [TransactionItem]
-    func saveTransaction(transaction:TransactionItem)
-    func saveCard(card:BankCardItem)
+    func loadCardData(completion: @escaping ((Result<[BankCardItem], Error>) -> Void)) 
+    func loadTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void))
 }

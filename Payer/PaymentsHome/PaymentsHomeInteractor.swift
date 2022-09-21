@@ -28,20 +28,17 @@ final class PaymentsHomeInteractor {
 // MARK: - Extensions -
 
 extension PaymentsHomeInteractor: PaymentsHomeInteractorInterface {
-    func saveTransaction(transaction: TransactionItem) {
-        payerStore.saveTransaction(transaction: transaction)
+    
+    func loadCardData(completion: @escaping ((Result<[BankCardItem], Error>) -> Void)) {
+        payerStore.getCardInfo { result in
+            completion(result)
+        }
     }
     
-    func saveCard(card: BankCardItem) {
-        payerStore.saveCardInfo(card: card)
-    }
-    
-    func loadCardData() -> [BankCardItem] {
-       return payerStore.getCardInfo()
-    }
-    
-    func loadTransactions() -> [TransactionItem] {
-        return payerStore.getTransactions()
+    func loadTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void)) {
+        payerStore.getTransactions { result in
+            completion(result)
+        }
     }
     
 }

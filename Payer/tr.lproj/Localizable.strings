@@ -8,3 +8,10 @@
 
 "expLabel" = "SKT:";
 "cvvLabel" = "CVV:";
+
+
+// Error Messages
+"error_title" = "Hata";
+"error_FailedToFetchCardData" = "Kart datası gelmedi";
+"error_FailedToFetchTransactions" = "Transfer datası gelmedi";
+"error_FailedToSaveTransaction" = "Transfer yapılamadı";

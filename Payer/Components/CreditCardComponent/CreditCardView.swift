@@ -54,16 +54,3 @@ class CreditCardView: UIView {
     
 
 }
-
-struct CardUIViewModel {
-    let userName: String
-    let cardNumber: String
-    let cvc: String
-    let expDate: String
-    let vendor: String
-}
-
-enum CardVendors: String {
-    case masterCard
-    case visa
-}
