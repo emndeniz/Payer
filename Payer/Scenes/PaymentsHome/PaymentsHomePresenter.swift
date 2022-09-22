@@ -45,6 +45,7 @@ final class PaymentsHomePresenter {
 // MARK: - Extensions -
 
 extension PaymentsHomePresenter: PaymentsHomePresenterInterface {
+
     func viewDidLoad() {
         interactor.loadCardData {  [weak self] result in
             guard let self = self else { return }
@@ -87,6 +88,10 @@ extension PaymentsHomePresenter: PaymentsHomePresenterInterface {
     
     func didSelectRow(index: Int) {
         wireframe.routeToTransactionDetails(item: transactionAtIndex(index: index))
+    }
+    
+    func makePayment() {
+        wireframe.routeToTransactionScene()
     }
     
 }

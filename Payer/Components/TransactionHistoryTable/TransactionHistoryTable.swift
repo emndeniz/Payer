@@ -18,7 +18,7 @@ class TransactionHistoryTable: UIView {
         }
     }
     
-    private let cellIddentifier = String(describing: TransactionsTableViewCell.self)
+    private let cellIdentifier = String(describing: TransactionsTableViewCell.self)
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -36,7 +36,7 @@ class TransactionHistoryTable: UIView {
         tableView.dataSource = self
         tableView.delegate = self
 
-        tableView.register(UINib.init(nibName: cellIddentifier, bundle: nil), forCellReuseIdentifier: cellIddentifier)
+        tableView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         
     }
 }
@@ -52,7 +52,7 @@ extension TransactionHistoryTable: UITableViewDataSource, UITableViewDelegate {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIddentifier) as! TransactionsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! TransactionsTableViewCell
         
         return cell
     }

@@ -37,7 +37,7 @@ extension PaymentsHomeWireframe: PaymentsHomeWireframeInterface {
     }
     
     func routeToTransactionScene() {
-        
+        navigationController?.pushWireframe(MakePaymentWireframe())
     }
     
 }

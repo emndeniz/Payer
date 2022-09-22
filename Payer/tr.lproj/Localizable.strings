@@ -15,3 +15,11 @@
 "error_FailedToFetchCardData" = "Kart datası gelmedi";
 "error_FailedToFetchTransactions" = "Transfer datası gelmedi";
 "error_FailedToSaveTransaction" = "Transfer yapılamadı";
+
+
+// Payment types
+"payment_Transfer" = "Para transferi";
+"payment_Apple" = "Apple ödemesi";
+"payment_Spotify" = "Spotify ödemesi";
+"payment_Amazon" = "Amazon ödemesi";
+"payment_Netflix" = "Netflix ödemesi";

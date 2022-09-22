@@ -19,3 +19,11 @@
 "error_FailedToFetchCardData" = "Failed to fetch card data, please try again.";
 "error_FailedToFetchTransactions" = "Failed to fetch transactions, please try again.";
 "error_FailedToSaveTransaction" = "Payment failed, please try again.";
+
+
+// Payment types
+"payment_Transfer" = "Money transfer";
+"payment_Apple" = "Apple payment";
+"payment_Spotify" = "Spotify payment";
+"payment_Amazon" = "Amazon payment";
+"payment_Netflix" = "Netflix payment";

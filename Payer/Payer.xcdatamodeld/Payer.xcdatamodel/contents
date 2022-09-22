@@ -8,6 +8,12 @@
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="vendor" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="SubscriptionData" representedClassName="SubscriptionData" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="renewalDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <entity name="TransactionData" representedClassName="TransactionData" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="charge" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
@@ -22,5 +28,6 @@
     <elements>
         <element name="BankCardData" positionX="-36" positionY="9" width="128" height="119"/>
         <element name="TransactionData" positionX="0" positionY="45" width="128" height="164"/>
+        <element name="SubscriptionData" positionX="-18" positionY="99" width="128" height="89"/>
     </elements>
 </model>

@@ -40,7 +40,10 @@ extension BaseWireframe {
 // MARK: - Wireframe Present Functions -
 extension UIViewController {
     
-    func presentWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>, animated: Bool = true, completion: (() -> Void)? = nil) {
+    func presentWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
+                                          presentationStyle: UIModalPresentationStyle = .formSheet,
+                                          animated: Bool = true, completion: (() -> Void)? = nil) {
+        wireframe.viewController.modalPresentationStyle = presentationStyle
         present(wireframe.viewController, animated: animated, completion: completion)
     }
 

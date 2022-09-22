@@ -26,6 +26,7 @@ protocol PaymentsHomePresenterInterface: PresenterInterface {
     var numberOfRows: Int { get }
     func transactionAtIndex(index:Int) -> TransactionItem
     func didSelectRow(index:Int)
+    func makePayment()
 }
 
 protocol PaymentsHomeInteractorInterface: InteractorInterface {
