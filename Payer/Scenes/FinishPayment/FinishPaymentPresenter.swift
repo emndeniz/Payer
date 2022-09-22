@@ -36,8 +36,8 @@ final class FinishPaymentPresenter {
 
 extension FinishPaymentPresenter: FinishPaymentPresenterInterface {
     func getGenericTexFieldDatas() -> [GenericTextFieldData] {
-        return [ GenericTextFieldData(label: "ibanLabel", placeHolder: "iban_placeHolder", text: "NL18INGB3696794244"),
-                 GenericTextFieldData(label: "nameSurnameLabel", placeHolder: "nameSurname_placeholder", text: "Emin"),
+        return [ GenericTextFieldData(label: "ibanLabel", placeHolder: "iban_placeHolder"),
+                 GenericTextFieldData(label: "nameSurnameLabel", placeHolder: "nameSurname_placeholder"),
                  GenericTextFieldData(label: "noteLabel", placeHolder: "note_placeHolder"),
                  GenericTextFieldData(label: "amountLabel", placeHolder: "amount_placeHolder")]
     }

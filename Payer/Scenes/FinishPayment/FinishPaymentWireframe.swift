@@ -33,7 +33,7 @@ final class FinishPaymentWireframe: BaseWireframe<FinishPaymentViewController> {
 
 extension FinishPaymentWireframe: FinishPaymentWireframeInterface {
     func dismiss() {
-        viewController.dismiss(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
 
