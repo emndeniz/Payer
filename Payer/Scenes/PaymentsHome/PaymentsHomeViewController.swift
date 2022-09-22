@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 final class PaymentsHomeViewController: UIViewController {
 
@@ -22,44 +23,33 @@ final class PaymentsHomeViewController: UIViewController {
     
     @IBOutlet weak var creditCardView: CreditCardView!
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var nvActivityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var transactionsTable: TransactionHistoryTable!
     var presenter: PaymentsHomePresenterInterface!
 
     @IBAction func payButtonAction(_ sender: Any) {
-        
+        presenter.makePayment()
     }
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        activityIndicator.hidesWhenStopped = true
-        presenter.viewDidLoad()
-//        let bankcard = BankCardItem(userName: "Mehmet Emin Deniz",
-//                                    cardNumber: "5123-4567-7680-6742",
-//                                    expirationDate: Date(timeIntervalSince1970: 1726934694),
-//                                    vendor: "MasterCard",
-//                                    balance: 1_578_234,
-//                                    ccv: 123)
-        //presenter.saveCard(card: bankcard)
        
+        nvActivityIndicator.startAnimating()
+       
+        transactionsTable.presenter = presenter
         
-//        creditCardView.cardNumber.text = card[0].cardNumber
-//        creditCardView.userName.text = card[0].userName
-//
-//        let formatter = NumberFormatter()
-//        formatter.maximumFractionDigits = 2
-//        formatter.minimumFractionDigits = 0
-//        formatter.currencyCode = "EUR"
-//        formatter.numberStyle = .currency
-//
-//        let string = formatter.string(for: card[0].balance)
-//        balanceAmount.text = string
+        payButtonLabel.text = NSLocalizedString("paybuttonLabel", comment: "")
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        presenter.viewWillAppear()
+    }
+
 
 }
 
@@ -67,7 +57,7 @@ final class PaymentsHomeViewController: UIViewController {
 
 extension PaymentsHomeViewController: PaymentsHomeViewInterface {
     func stopIndicator() {
-        activityIndicator.stopAnimating()
+        nvActivityIndicator.stopAnimating()
     }
     
     func updateCard(cardModel: CardUIViewModel) {

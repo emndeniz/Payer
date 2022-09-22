@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012897E828DCCCA600C56CDC /* FinishPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012897E228DCCCA600C56CDC /* FinishPayment.storyboard */; };
+		012897E928DCCCA600C56CDC /* FinishPaymentInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897E328DCCCA600C56CDC /* FinishPaymentInterfaces.swift */; };
+		012897EA28DCCCA600C56CDC /* FinishPaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897E428DCCCA600C56CDC /* FinishPaymentPresenter.swift */; };
+		012897EB28DCCCA600C56CDC /* FinishPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897E528DCCCA600C56CDC /* FinishPaymentViewController.swift */; };
+		012897EC28DCCCA600C56CDC /* FinishPaymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897E628DCCCA600C56CDC /* FinishPaymentInteractor.swift */; };
+		012897ED28DCCCA600C56CDC /* FinishPaymentWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897E728DCCCA600C56CDC /* FinishPaymentWireframe.swift */; };
+		012897F028DCCDB500C56CDC /* GenericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897EF28DCCDB500C56CDC /* GenericTextField.swift */; };
+		012897F228DCCDBF00C56CDC /* GenericTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012897F128DCCDBF00C56CDC /* GenericTextField.xib */; };
+		012897F528DCED1B00C56CDC /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897F328DCED1B00C56CDC /* EmptyTableViewCell.swift */; };
+		012897F628DCED1B00C56CDC /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012897F428DCED1B00C56CDC /* EmptyTableViewCell.xib */; };
+		012897F928DCF13700C56CDC /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 012897F828DCF13700C56CDC /* NVActivityIndicatorView */; };
+		012897FB28DCF13700C56CDC /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 012897FA28DCF13700C56CDC /* NVActivityIndicatorViewExtended */; };
+		0128980328DCF45300C56CDC /* PaymentDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012897FD28DCF45300C56CDC /* PaymentDetails.storyboard */; };
+		0128980428DCF45300C56CDC /* PaymentDetailsInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897FE28DCF45300C56CDC /* PaymentDetailsInterfaces.swift */; };
+		0128980528DCF45300C56CDC /* PaymentDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012897FF28DCF45300C56CDC /* PaymentDetailsPresenter.swift */; };
+		0128980628DCF45300C56CDC /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128980028DCF45300C56CDC /* PaymentDetailsViewController.swift */; };
+		0128980728DCF45300C56CDC /* PaymentDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128980128DCF45300C56CDC /* PaymentDetailsInteractor.swift */; };
+		0128980828DCF45300C56CDC /* PaymentDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128980228DCF45300C56CDC /* PaymentDetailsWireframe.swift */; };
 		0133CE0F28DA602A00AAD8B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE0E28DA602A00AAD8B2 /* AppDelegate.swift */; };
 		0133CE1128DA602A00AAD8B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE1028DA602A00AAD8B2 /* SceneDelegate.swift */; };
 		0133CE1328DA602A00AAD8B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE1228DA602A00AAD8B2 /* ViewController.swift */; };
@@ -42,6 +60,15 @@
 		0133CE7B28DB579700AAD8B2 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 0133CE7A28DB579700AAD8B2 /* SwiftyBeaver */; };
 		0133CE7E28DB57A500AAD8B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133CE7D28DB57A500AAD8B2 /* Logger.swift */; };
 		0133CE8628DB738B00AAD8B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0133CE8828DB738B00AAD8B2 /* Localizable.strings */; };
+		01A4590428DC5DC70072ADCF /* MakePayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A458FE28DC5DC70072ADCF /* MakePayment.storyboard */; };
+		01A4590528DC5DC70072ADCF /* MakePaymentInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A458FF28DC5DC70072ADCF /* MakePaymentInterfaces.swift */; };
+		01A4590628DC5DC70072ADCF /* MakePaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590028DC5DC70072ADCF /* MakePaymentPresenter.swift */; };
+		01A4590728DC5DC70072ADCF /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590128DC5DC70072ADCF /* MakePaymentViewController.swift */; };
+		01A4590828DC5DC70072ADCF /* MakePaymentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590228DC5DC70072ADCF /* MakePaymentInteractor.swift */; };
+		01A4590928DC5DC70072ADCF /* MakePaymentWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590328DC5DC70072ADCF /* MakePaymentWireframe.swift */; };
+		01A4590B28DC89390072ADCF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590A28DC89390072ADCF /* Extensions.swift */; };
+		01A4590D28DC8AA70072ADCF /* PaymentTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590C28DC8AA70072ADCF /* PaymentTypeTableViewCell.swift */; };
+		01A4590F28DCA7200072ADCF /* SubscriptionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4590E28DCA7200072ADCF /* SubscriptionItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +89,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012897E228DCCCA600C56CDC /* FinishPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishPayment.storyboard; sourceTree = "<group>"; };
+		012897E328DCCCA600C56CDC /* FinishPaymentInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPaymentInterfaces.swift; sourceTree = "<group>"; };
+		012897E428DCCCA600C56CDC /* FinishPaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPaymentPresenter.swift; sourceTree = "<group>"; };
+		012897E528DCCCA600C56CDC /* FinishPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPaymentViewController.swift; sourceTree = "<group>"; };
+		012897E628DCCCA600C56CDC /* FinishPaymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPaymentInteractor.swift; sourceTree = "<group>"; };
+		012897E728DCCCA600C56CDC /* FinishPaymentWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPaymentWireframe.swift; sourceTree = "<group>"; };
+		012897EF28DCCDB500C56CDC /* GenericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextField.swift; sourceTree = "<group>"; };
+		012897F128DCCDBF00C56CDC /* GenericTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericTextField.xib; sourceTree = "<group>"; };
+		012897F328DCED1B00C56CDC /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		012897F428DCED1B00C56CDC /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
+		012897FD28DCF45300C56CDC /* PaymentDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentDetails.storyboard; sourceTree = "<group>"; };
+		012897FE28DCF45300C56CDC /* PaymentDetailsInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsInterfaces.swift; sourceTree = "<group>"; };
+		012897FF28DCF45300C56CDC /* PaymentDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsPresenter.swift; sourceTree = "<group>"; };
+		0128980028DCF45300C56CDC /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
+		0128980128DCF45300C56CDC /* PaymentDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsInteractor.swift; sourceTree = "<group>"; };
+		0128980228DCF45300C56CDC /* PaymentDetailsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsWireframe.swift; sourceTree = "<group>"; };
 		0133CE0B28DA602A00AAD8B2 /* Payer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Payer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0133CE0E28DA602A00AAD8B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0133CE1028DA602A00AAD8B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +144,15 @@
 		0133CE7D28DB57A500AAD8B2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0133CE8728DB738B00AAD8B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0133CE9328DB756E00AAD8B2 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01A458FE28DC5DC70072ADCF /* MakePayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakePayment.storyboard; sourceTree = "<group>"; };
+		01A458FF28DC5DC70072ADCF /* MakePaymentInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentInterfaces.swift; sourceTree = "<group>"; };
+		01A4590028DC5DC70072ADCF /* MakePaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentPresenter.swift; sourceTree = "<group>"; };
+		01A4590128DC5DC70072ADCF /* MakePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
+		01A4590228DC5DC70072ADCF /* MakePaymentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentInteractor.swift; sourceTree = "<group>"; };
+		01A4590328DC5DC70072ADCF /* MakePaymentWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentWireframe.swift; sourceTree = "<group>"; };
+		01A4590A28DC89390072ADCF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../../Documents/Extensions.swift; sourceTree = "<group>"; };
+		01A4590C28DC8AA70072ADCF /* PaymentTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTypeTableViewCell.swift; sourceTree = "<group>"; };
+		01A4590E28DCA7200072ADCF /* SubscriptionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +160,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012897FB28DCF13700C56CDC /* NVActivityIndicatorViewExtended in Frameworks */,
+				012897F928DCF13700C56CDC /* NVActivityIndicatorView in Frameworks */,
 				0133CE7B28DB579700AAD8B2 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +183,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012897E128DCCC7F00C56CDC /* FinishPayment */ = {
+			isa = PBXGroup;
+			children = (
+				012897E228DCCCA600C56CDC /* FinishPayment.storyboard */,
+				012897E328DCCCA600C56CDC /* FinishPaymentInterfaces.swift */,
+				012897E428DCCCA600C56CDC /* FinishPaymentPresenter.swift */,
+				012897E528DCCCA600C56CDC /* FinishPaymentViewController.swift */,
+				012897E628DCCCA600C56CDC /* FinishPaymentInteractor.swift */,
+				012897E728DCCCA600C56CDC /* FinishPaymentWireframe.swift */,
+			);
+			path = FinishPayment;
+			sourceTree = "<group>";
+		};
+		012897EE28DCCD8500C56CDC /* GenericTextField */ = {
+			isa = PBXGroup;
+			children = (
+				012897EF28DCCDB500C56CDC /* GenericTextField.swift */,
+				012897F128DCCDBF00C56CDC /* GenericTextField.xib */,
+			);
+			path = GenericTextField;
+			sourceTree = "<group>";
+		};
+		012897FC28DCF44300C56CDC /* PaymentDetails */ = {
+			isa = PBXGroup;
+			children = (
+				012897FD28DCF45300C56CDC /* PaymentDetails.storyboard */,
+				012897FE28DCF45300C56CDC /* PaymentDetailsInterfaces.swift */,
+				012897FF28DCF45300C56CDC /* PaymentDetailsPresenter.swift */,
+				0128980028DCF45300C56CDC /* PaymentDetailsViewController.swift */,
+				0128980128DCF45300C56CDC /* PaymentDetailsInteractor.swift */,
+				0128980228DCF45300C56CDC /* PaymentDetailsWireframe.swift */,
+			);
+			path = PaymentDetails;
+			sourceTree = "<group>";
+		};
 		0133CE0228DA602A00AAD8B2 = {
 			isa = PBXGroup;
 			children = (
@@ -152,11 +241,10 @@
 		0133CE0D28DA602A00AAD8B2 /* Payer */ = {
 			isa = PBXGroup;
 			children = (
+				01A458FC28DC5D140072ADCF /* Scenes */,
 				0133CE7C28DB579C00AAD8B2 /* Utils */,
 				0133CE7028DB543100AAD8B2 /* Persistency */,
 				0133CE5B28DA677E00AAD8B2 /* Components */,
-				0133CE4128DA620700AAD8B2 /* BaseViper */,
-				0133CE4C28DA621000AAD8B2 /* PaymentsHome */,
 				0133CE0E28DA602A00AAD8B2 /* AppDelegate.swift */,
 				0133CE1028DA602A00AAD8B2 /* SceneDelegate.swift */,
 				0133CE1228DA602A00AAD8B2 /* ViewController.swift */,
@@ -216,6 +304,7 @@
 		0133CE5B28DA677E00AAD8B2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				012897EE28DCCD8500C56CDC /* GenericTextField */,
 				0133CE6128DB265000AAD8B2 /* TransactionHistoryTable */,
 				0133CE5C28DA678500AAD8B2 /* CreditCardComponent */,
 			);
@@ -246,6 +335,8 @@
 			children = (
 				0133CE6C28DB341800AAD8B2 /* TransactionsTableViewCell.swift */,
 				0133CE6D28DB341800AAD8B2 /* TransactionsTableViewCell.xib */,
+				012897F328DCED1B00C56CDC /* EmptyTableViewCell.swift */,
+				012897F428DCED1B00C56CDC /* EmptyTableViewCell.xib */,
 			);
 			path = TransactionCell;
 			sourceTree = "<group>";
@@ -253,9 +344,8 @@
 		0133CE7028DB543100AAD8B2 /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
+				01A4591028DCA7770072ADCF /* Entities */,
 				0133CE7128DB545500AAD8B2 /* PayerStore.swift */,
-				0133CE7328DB548200AAD8B2 /* BankCardItem.swift */,
-				0133CE7528DB549500AAD8B2 /* TransactionItem.swift */,
 				0133CE7728DB55DA00AAD8B2 /* CoreDataStack.swift */,
 			);
 			path = Persistency;
@@ -265,8 +355,45 @@
 			isa = PBXGroup;
 			children = (
 				0133CE7D28DB57A500AAD8B2 /* Logger.swift */,
+				01A4590A28DC89390072ADCF /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		01A458FC28DC5D140072ADCF /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				012897FC28DCF44300C56CDC /* PaymentDetails */,
+				012897E128DCCC7F00C56CDC /* FinishPayment */,
+				01A458FD28DC5D200072ADCF /* MakePayment */,
+				0133CE4128DA620700AAD8B2 /* BaseViper */,
+				0133CE4C28DA621000AAD8B2 /* PaymentsHome */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		01A458FD28DC5D200072ADCF /* MakePayment */ = {
+			isa = PBXGroup;
+			children = (
+				01A458FE28DC5DC70072ADCF /* MakePayment.storyboard */,
+				01A458FF28DC5DC70072ADCF /* MakePaymentInterfaces.swift */,
+				01A4590028DC5DC70072ADCF /* MakePaymentPresenter.swift */,
+				01A4590128DC5DC70072ADCF /* MakePaymentViewController.swift */,
+				01A4590228DC5DC70072ADCF /* MakePaymentInteractor.swift */,
+				01A4590328DC5DC70072ADCF /* MakePaymentWireframe.swift */,
+				01A4590C28DC8AA70072ADCF /* PaymentTypeTableViewCell.swift */,
+			);
+			path = MakePayment;
+			sourceTree = "<group>";
+		};
+		01A4591028DCA7770072ADCF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0133CE7328DB548200AAD8B2 /* BankCardItem.swift */,
+				0133CE7528DB549500AAD8B2 /* TransactionItem.swift */,
+				01A4590E28DCA7200072ADCF /* SubscriptionItem.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +414,8 @@
 			name = Payer;
 			packageProductDependencies = (
 				0133CE7A28DB579700AAD8B2 /* SwiftyBeaver */,
+				012897F828DCF13700C56CDC /* NVActivityIndicatorView */,
+				012897FA28DCF13700C56CDC /* NVActivityIndicatorViewExtended */,
 			);
 			productName = Payer;
 			productReference = 0133CE0B28DA602A00AAD8B2 /* Payer.app */;
@@ -363,6 +492,7 @@
 			mainGroup = 0133CE0228DA602A00AAD8B2;
 			packageReferences = (
 				0133CE7928DB579700AAD8B2 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				012897F728DCF13700C56CDC /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 0133CE0C28DA602A00AAD8B2 /* Products */;
 			projectDirPath = "";
@@ -380,14 +510,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A4590428DC5DC70072ADCF /* MakePayment.storyboard in Resources */,
 				0133CE5328DA622F00AAD8B2 /* PaymentsHome.storyboard in Resources */,
+				012897E828DCCCA600C56CDC /* FinishPayment.storyboard in Resources */,
 				0133CE6028DA67EE00AAD8B2 /* CreditCardView.xib in Resources */,
 				0133CE6F28DB341800AAD8B2 /* TransactionsTableViewCell.xib in Resources */,
+				0128980328DCF45300C56CDC /* PaymentDetails.storyboard in Resources */,
 				0133CE1E28DA602C00AAD8B2 /* LaunchScreen.storyboard in Resources */,
 				0133CE1B28DA602C00AAD8B2 /* Assets.xcassets in Resources */,
 				0133CE8628DB738B00AAD8B2 /* Localizable.strings in Resources */,
 				0133CE6328DB266300AAD8B2 /* TransactionHistoryTable.xib in Resources */,
+				012897F628DCED1B00C56CDC /* EmptyTableViewCell.xib in Resources */,
 				0133CE1628DA602A00AAD8B2 /* Main.storyboard in Resources */,
+				012897F228DCCDBF00C56CDC /* GenericTextField.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,25 +549,45 @@
 			files = (
 				0133CE5628DA622F00AAD8B2 /* PaymentsHomeViewController.swift in Sources */,
 				0133CE1328DA602A00AAD8B2 /* ViewController.swift in Sources */,
+				01A4590828DC5DC70072ADCF /* MakePaymentInteractor.swift in Sources */,
+				01A4590F28DCA7200072ADCF /* SubscriptionItem.swift in Sources */,
+				01A4590628DC5DC70072ADCF /* MakePaymentPresenter.swift in Sources */,
 				0133CE4728DA620700AAD8B2 /* BaseWireframe.swift in Sources */,
+				0128980728DCF45300C56CDC /* PaymentDetailsInteractor.swift in Sources */,
 				0133CE5728DA622F00AAD8B2 /* PaymentsHomeInteractor.swift in Sources */,
 				0133CE6528DB269500AAD8B2 /* TransactionHistoryTable.swift in Sources */,
+				012897EA28DCCCA600C56CDC /* FinishPaymentPresenter.swift in Sources */,
+				012897EC28DCCCA600C56CDC /* FinishPaymentInteractor.swift in Sources */,
+				01A4590B28DC89390072ADCF /* Extensions.swift in Sources */,
+				01A4590928DC5DC70072ADCF /* MakePaymentWireframe.swift in Sources */,
 				0133CE4A28DA620700AAD8B2 /* ViewInterface.swift in Sources */,
+				01A4590D28DC8AA70072ADCF /* PaymentTypeTableViewCell.swift in Sources */,
 				0133CE0F28DA602A00AAD8B2 /* AppDelegate.swift in Sources */,
 				0133CE1128DA602A00AAD8B2 /* SceneDelegate.swift in Sources */,
+				012897ED28DCCCA600C56CDC /* FinishPaymentWireframe.swift in Sources */,
+				01A4590728DC5DC70072ADCF /* MakePaymentViewController.swift in Sources */,
+				0128980828DCF45300C56CDC /* PaymentDetailsWireframe.swift in Sources */,
 				0133CE5528DA622F00AAD8B2 /* PaymentsHomePresenter.swift in Sources */,
 				0133CE7E28DB57A500AAD8B2 /* Logger.swift in Sources */,
+				012897EB28DCCCA600C56CDC /* FinishPaymentViewController.swift in Sources */,
 				0133CE5828DA622F00AAD8B2 /* PaymentsHomeWireframe.swift in Sources */,
 				0133CE4828DA620700AAD8B2 /* UIStoryboardExtension.swift in Sources */,
 				0133CE5A28DA62AF00AAD8B2 /* PaymentsNavigationViewController.swift in Sources */,
+				012897F028DCCDB500C56CDC /* GenericTextField.swift in Sources */,
 				0133CE4B28DA620700AAD8B2 /* InteractorInterface.swift in Sources */,
+				01A4590528DC5DC70072ADCF /* MakePaymentInterfaces.swift in Sources */,
+				0128980428DCF45300C56CDC /* PaymentDetailsInterfaces.swift in Sources */,
 				0133CE7628DB549500AAD8B2 /* TransactionItem.swift in Sources */,
 				0133CE6E28DB341800AAD8B2 /* TransactionsTableViewCell.swift in Sources */,
 				0133CE7428DB548200AAD8B2 /* BankCardItem.swift in Sources */,
 				0133CE7228DB545500AAD8B2 /* PayerStore.swift in Sources */,
 				0133CE7828DB55DA00AAD8B2 /* CoreDataStack.swift in Sources */,
+				012897E928DCCCA600C56CDC /* FinishPaymentInterfaces.swift in Sources */,
 				0133CE5428DA622F00AAD8B2 /* PaymentsHomeInterfaces.swift in Sources */,
 				0133CE1928DA602A00AAD8B2 /* Payer.xcdatamodeld in Sources */,
+				0128980628DCF45300C56CDC /* PaymentDetailsViewController.swift in Sources */,
+				0128980528DCF45300C56CDC /* PaymentDetailsPresenter.swift in Sources */,
+				012897F528DCED1B00C56CDC /* EmptyTableViewCell.swift in Sources */,
 				0133CE4928DA620700AAD8B2 /* PresenterInterface.swift in Sources */,
 				0133CE5E28DA67AC00AAD8B2 /* CreditCardView.swift in Sources */,
 			);
@@ -789,6 +944,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		012897F728DCF13700C56CDC /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		0133CE7928DB579700AAD8B2 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
@@ -800,6 +963,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		012897F828DCF13700C56CDC /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 012897F728DCF13700C56CDC /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		012897FA28DCF13700C56CDC /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 012897F728DCF13700C56CDC /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
 		0133CE7A28DB579700AAD8B2 /* SwiftyBeaver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0133CE7928DB579700AAD8B2 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;

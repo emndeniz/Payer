@@ -40,7 +40,10 @@ extension BaseWireframe {
 // MARK: - Wireframe Present Functions -
 extension UIViewController {
     
-    func presentWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>, animated: Bool = true, completion: (() -> Void)? = nil) {
+    func presentWireframe<ViewController>(_ wireframe: BaseWireframe<ViewController>,
+                                          presentationStyle: UIModalPresentationStyle = .formSheet,
+                                          animated: Bool = true, completion: (() -> Void)? = nil) {
+        wireframe.viewController.modalPresentationStyle = presentationStyle
         present(wireframe.viewController, animated: animated, completion: completion)
     }
 
@@ -49,8 +52,8 @@ extension UIViewController {
 // MARK: - Generic Alert Functions -
 extension BaseWireframe {
     func showAlert(with title: String?, message: String?) {
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        showAlert(with: title, message: message, actions: [okAction])
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+        showAlert(with: NSLocalizedString(title ?? "", comment: ""), message: NSLocalizedString(message ?? "", comment: ""), actions: [okAction])
     }
 
     func showAlert(with title: String?, message: String?, actions: [UIAlertAction]) {

@@ -31,7 +31,7 @@ class CreditCardView: UIView {
         super.init(coder: coder)
         commonInit()
     }
-    
+
     private func commonInit(model:CardUIViewModel?=nil) {
         Bundle.main.loadNibNamed(String(describing: CreditCardView.self), owner: self, options: nil)
         addSubview(contentView)
@@ -51,6 +51,9 @@ class CreditCardView: UIView {
   
     }
     
+    @IBAction func copyButtonAction(_ sender: Any) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = cardNumber.text
+    }
     
-
 }

@@ -18,7 +18,10 @@ class TransactionHistoryTable: UIView {
         }
     }
     
-    private let cellIddentifier = String(describing: TransactionsTableViewCell.self)
+    var presenter: PresenterInterface?
+    
+    private let cellIdentifier = String(describing: TransactionsTableViewCell.self)
+    private let emptyCellIdentifier = String(describing: EmptyTableViewCell.self)
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -36,26 +39,52 @@ class TransactionHistoryTable: UIView {
         tableView.dataSource = self
         tableView.delegate = self
 
-        tableView.register(UINib.init(nibName: cellIddentifier, bundle: nil), forCellReuseIdentifier: cellIddentifier)
+        tableView.register(UINib.init(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        tableView.register(UINib.init(nibName: emptyCellIdentifier, bundle: nil), forCellReuseIdentifier: emptyCellIdentifier)
         
     }
 }
 
 extension TransactionHistoryTable: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        100
+        
+        if section == 0 || section == 2 {
+            return 1
+        }else {
+            return tableViewData.count
+        }
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIddentifier) as! TransactionsTableViewCell
         
-        return cell
+        
+        if indexPath.section == 0 || indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: emptyCellIdentifier) as! EmptyTableViewCell
+            
+            
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! TransactionsTableViewCell
+            
+            cell.setData(item: tableViewData[indexPath.row])
+            
+            
+            return cell
+        }
+        
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let presenter = presenter as? PaymentsHomePresenter else { return }
+        
+        presenter.didSelectRow(index: indexPath)
+    }
+
     
     
 }

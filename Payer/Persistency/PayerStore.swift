@@ -11,16 +11,20 @@ import CoreData
 protocol PayerStoreProtocol {
     func getCardInfo(completion: @escaping ((Result<[BankCardItem], Error>) -> Void))
     func getTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void))
+    func getSubscriptions(completion: @escaping ((Result<[SubscriptionItem], Error>) -> Void))
     
     func saveTransaction(transaction:TransactionItem,
                          completion: @escaping ((Result<TransactionData, Error>) -> Void))
     func saveCardInfo(card:BankCardItem,
                       completion: @escaping ((Result<BankCardData, Error>) -> Void))
+    func saveSubscription(subscription:SubscriptionItem,
+                      completion: @escaping ((Result<SubscriptionData, Error>) -> Void))
+    
+
 }
 
 
 class PayerStore : PayerStoreProtocol {
-
     
     // MARK: - Properties
     let managedObjectContext: NSManagedObjectContext
@@ -35,13 +39,17 @@ class PayerStore : PayerStoreProtocol {
     func getCardInfo(completion: @escaping ((Result<[BankCardItem], Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            
+            var count = self.cardInfoGetAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to fetch data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.getCardInfoItems()))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.cardInfoGetAPICallCount.rawValue)
         }
 
     }
@@ -49,13 +57,16 @@ class PayerStore : PayerStoreProtocol {
     func getTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            var count = self.transactionInfoGetAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to fetch data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.getTransactionsItems()))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.transactionInfoGetAPICallCount.rawValue)
         }
     
     }
@@ -64,28 +75,67 @@ class PayerStore : PayerStoreProtocol {
                          completion: @escaping ((Result<TransactionData, Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            var count = self.transactionInfoSaveAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to save data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.saveTransactionItems(transaction: transaction)))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.transactionInfoSaveAPICallCount.rawValue)
         }
     }
     
     func saveCardInfo(card:BankCardItem, completion: @escaping ((Result<BankCardData, Error>) -> Void)){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            var count = self.cardInfoSaveAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to save data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.saveCardInfoItems(card: card)))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.cardInfoSaveAPICallCount.rawValue)
         }
     }
+    
+    func getSubscriptions(completion: @escaping ((Result<[SubscriptionItem], Error>) -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            var count = self.subscriptionInfoGetAPICallCount
+            if count == 10 {
+                // Fail
+                let err = NSError(domain: "Failed to fetch data", code: 404)
+                completion(.failure(err))
+            }else {
+                completion(.success(self.getSubscriptions()))
+            }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.subscriptionInfoGetAPICallCount.rawValue)
+        }
+    }
+    
+    func saveSubscription(subscription: SubscriptionItem, completion: @escaping ((Result<SubscriptionData, Error>) -> Void)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            var count = self.subscriptionInfoSaveAPICallCount
+            if count == 10 {
+                // Fail
+                let err = NSError(domain: "Failed to save data", code: 404)
+                completion(.failure(err))
+            }else {
+                completion(.success(self.saveSubscription(subscription: subscription)))
+            }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.subscriptionInfoSaveAPICallCount.rawValue)
+        }
+    }
+    
     
     // Those counts required for fail cases.
     private var cardInfoGetAPICallCount: Int {
@@ -104,10 +154,19 @@ class PayerStore : PayerStoreProtocol {
         return UserDefaults.standard.integer(forKey: APICallCounts.transactionInfoSaveAPICallCount.rawValue)
     }
     
+    private var subscriptionInfoGetAPICallCount: Int {
+        return UserDefaults.standard.integer(forKey: APICallCounts.transactionInfoGetAPICallCount.rawValue)
+    }
+    
+    private var subscriptionInfoSaveAPICallCount: Int {
+        return UserDefaults.standard.integer(forKey: APICallCounts.subscriptionInfoSaveAPICallCount.rawValue)
+    }
+    
 }
 
 extension PayerStore {
     
+    //MARK: Get data functions
     private func getCardInfoItems() -> [BankCardItem] {
         let bankCardDataItems = loadCardsCoreData()
         var bankCards: [BankCardItem] = []
@@ -116,6 +175,8 @@ extension PayerStore {
             let cardInfoItem = BankCardItem(data: item)
             bankCards.append(cardInfoItem)
         }
+        
+        UserDefaults.standard.set(bankCards[0].userName, forKey: "CardOwner")
         return bankCards
         
     }
@@ -131,6 +192,18 @@ extension PayerStore {
         return transactions
     }
     
+    private func getSubscriptions() -> [SubscriptionItem] {
+        let subscriptionsData = loadSubscriptionCoreData()
+        var subscriptions: [SubscriptionItem] = []
+        
+        for item in subscriptionsData {
+            let cardInfoItem = SubscriptionItem(data: item)
+            subscriptions.append(cardInfoItem)
+        }
+        return subscriptions
+    }
+    
+    //MARK: Save data functions
     private func saveTransactionItems(transaction: TransactionItem) -> TransactionData {
         let transactionData = transaction.toData(managedObjectContext: managedObjectContext)
         coreDataStack.saveContext()
@@ -142,6 +215,17 @@ extension PayerStore {
         coreDataStack.saveContext()
         return cardData
     }
+    
+
+    
+    private func saveSubscription(subscription: SubscriptionItem) -> SubscriptionData{
+        let subscriptionData = subscription.toData(managedObjectContext: managedObjectContext)
+        coreDataStack.saveContext()
+        return subscriptionData
+    }
+    
+    
+    //MARK: Load required entity functions
     
     /// Loads items from Core Data
     /// - Returns: BankCard Data Array
@@ -174,6 +258,23 @@ extension PayerStore {
         
         return []
     }
+    
+    
+    /// Loads items from Core Data
+    /// - Returns: BankCard Data Array
+    private func loadSubscriptionCoreData() -> [SubscriptionData]{
+
+        let request: NSFetchRequest<SubscriptionData> = SubscriptionData.fetchRequest()
+        
+        do {
+            let items = try managedObjectContext.fetch(request)
+            return items
+        }  catch let error as NSError{
+            Logger.log.error("Could not fetch.", context:error)
+        }
+        
+        return []
+    }
 }
 
 enum APICallCounts: String {
@@ -181,6 +282,8 @@ enum APICallCounts: String {
     case cardInfoSaveAPICallCount
     case transactionInfoGetAPICallCount
     case transactionInfoSaveAPICallCount
+    case subscriptionInfoGetAPICallCount
+    case subscriptionInfoSaveAPICallCount
 }
 
 
