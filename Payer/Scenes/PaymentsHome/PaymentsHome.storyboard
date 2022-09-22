@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-Dl-7fb" userLabel="TransactionTable" customClass="TransactionHistoryTable" customModule="Payer" customModuleProvider="target">
-                                <rect key="frame" x="8" y="320" width="374" height="524"/>
+                                <rect key="frame" x="8" y="270" width="374" height="574"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwP-MX-iAG" userLabel="TopView">
@@ -36,9 +36,6 @@
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UFU-nv-xfR">
-                                        <rect key="frame" x="40" y="80" width="310" height="50"/>
-                                    </activityIndicatorView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBz-hV-qcW" customClass="CreditCardView" customModule="Payer" customModuleProvider="target">
                                         <rect key="frame" x="30" y="140" width="330" height="180"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,18 +57,28 @@
                                     <constraint firstAttribute="trailing" secondItem="qfx-nS-Azy" secondAttribute="trailing" constant="40" id="Cum-mt-CRM"/>
                                     <constraint firstAttribute="trailing" secondItem="bce-g8-an2" secondAttribute="trailing" constant="150" id="O26-lM-ART"/>
                                     <constraint firstItem="JBz-hV-qcW" firstAttribute="top" secondItem="qfx-nS-Azy" secondAttribute="bottom" constant="15" id="Szy-Lb-T3c"/>
-                                    <constraint firstItem="JBz-hV-qcW" firstAttribute="top" secondItem="UFU-nv-xfR" secondAttribute="bottom" constant="10" id="WjB-XA-RUX"/>
                                     <constraint firstAttribute="bottom" secondItem="JBz-hV-qcW" secondAttribute="bottom" constant="-50" id="Xed-7H-paM"/>
                                     <constraint firstItem="qfx-nS-Azy" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="40" id="Z1q-sm-7ue"/>
                                     <constraint firstAttribute="height" constant="270" id="cdv-vL-3GG"/>
-                                    <constraint firstItem="UFU-nv-xfR" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="40" id="gWn-8O-2fX"/>
-                                    <constraint firstItem="UFU-nv-xfR" firstAttribute="top" secondItem="bce-g8-an2" secondAttribute="bottom" constant="7" id="hlc-1d-HpG"/>
                                     <constraint firstItem="qfx-nS-Azy" firstAttribute="top" secondItem="bce-g8-an2" secondAttribute="bottom" constant="4" id="iOA-Zk-Jj7"/>
-                                    <constraint firstAttribute="trailing" secondItem="UFU-nv-xfR" secondAttribute="trailing" constant="40" id="l0H-Yl-4Ny"/>
                                     <constraint firstItem="bce-g8-an2" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="top" constant="50" id="rG4-fI-GkX"/>
                                     <constraint firstAttribute="trailing" secondItem="JBz-hV-qcW" secondAttribute="trailing" constant="30" id="siS-RW-7qL"/>
                                     <constraint firstItem="JBz-hV-qcW" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="30" id="vmg-g0-8uD"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-1p-0ox" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="135" y="362" width="120" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1Jj-jy-FhW"/>
+                                    <constraint firstAttribute="height" constant="120" id="sD4-aM-2sg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballRotateChase"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" name="PrimaryColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uir-Kf-ZSB" userLabel="PayButton">
                                 <rect key="frame" x="155" y="700" width="80" height="80"/>
@@ -108,10 +115,12 @@
                         <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gSA-1p-0ox" firstAttribute="centerY" secondItem="Z2g-4m-atm" secondAttribute="centerY" id="2gY-bW-Nuf"/>
                             <constraint firstItem="e9K-Dl-7fb" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="8" id="5ep-aX-Ry6"/>
                             <constraint firstItem="e9K-Dl-7fb" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" constant="-8" id="7AV-Du-5i2"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="Uir-Kf-ZSB" secondAttribute="trailing" constant="155" id="9NV-Gw-5ln"/>
-                            <constraint firstItem="e9K-Dl-7fb" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="bottom" constant="50" id="ExJ-rN-Piy"/>
+                            <constraint firstItem="e9K-Dl-7fb" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="bottom" id="ExJ-rN-Piy"/>
+                            <constraint firstItem="gSA-1p-0ox" firstAttribute="centerX" secondItem="Z2g-4m-atm" secondAttribute="centerX" id="IHt-hA-cUf"/>
                             <constraint firstItem="vwP-MX-iAG" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" id="PcS-Pz-MJW"/>
                             <constraint firstItem="vwP-MX-iAG" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="aeA-8I-Ito"/>
                             <constraint firstItem="Uir-Kf-ZSB" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="155" id="f49-dP-Pyh"/>
@@ -122,11 +131,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="qxb-gD-jP7"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="UFU-nv-xfR" id="9CU-Fn-GFX"/>
                         <outlet property="balanceAmount" destination="qfx-nS-Azy" id="fYs-cA-2di"/>
                         <outlet property="balanceLabel" destination="bce-g8-an2" id="1Sg-8o-SpX"/>
                         <outlet property="creditCardView" destination="JBz-hV-qcW" id="o2G-gG-2wU"/>
                         <outlet property="headerView" destination="vwP-MX-iAG" id="H3a-K0-WUC"/>
+                        <outlet property="nvActivityIndicator" destination="gSA-1p-0ox" id="uFg-rC-uNE"/>
                         <outlet property="payButtonLabel" destination="JMn-7a-zY0" id="WbG-KK-2pS"/>
                         <outlet property="transactionsTable" destination="e9K-Dl-7fb" id="6J3-Wu-ahK"/>
                     </connections>
@@ -171,6 +180,9 @@
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

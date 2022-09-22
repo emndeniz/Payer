@@ -88,7 +88,7 @@ extension MakePaymentPresenter: MakePaymentPresenterInterface {
     }
     
     func didSelectRow(index: Int) {
-        //TODO: imp
+        wireframe.moneyTransfer()
     }
     
 }

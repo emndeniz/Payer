@@ -6,8 +6,22 @@
   
 */
 
+// Default labels
 "expLabel" = "SKT:";
 "cvvLabel" = "CVV:";
+"ibanLabel" = "IBAN";
+"nameSurnameLabel" = "İsim Soyisim";
+"noteLabel" = "Not";
+"amountLabel" = "Miktar";
+"transferButtonLabel" = "Gönder";
+"paybuttonLabel" = "ÖDE";
+
+// PlaceHolders
+"iban_placeHolder" = "Lütfen IBAN no girin";
+"nameSurname_placeholder" = "Lütfen isim soyisim girin";
+"note_placeHolder" = "Lütfen transfer notu girin";
+"amount_placeHolder" = "Lütfen miktr giriniz";
+
 
 
 // Error Messages
@@ -15,7 +29,9 @@
 "error_FailedToFetchCardData" = "Kart datası gelmedi";
 "error_FailedToFetchTransactions" = "Transfer datası gelmedi";
 "error_FailedToSaveTransaction" = "Transfer yapılamadı";
-
+"error_incorrectIban" = "Iban numarası yanlış yada eksik";
+"error_missingNameSurname" = "İsim soyisim eksik";
+"error_missingAmount" = "Miktar eksiks";
 
 // Payment types
 "payment_Transfer" = "Para transferi";

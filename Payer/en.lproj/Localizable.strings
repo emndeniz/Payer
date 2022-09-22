@@ -10,16 +10,27 @@
 // Default labels
 "expLabel" = "EXP:";
 "cvvLabel" = "CVV:";
+"ibanLabel" = "IBAN";
+"nameSurnameLabel" = "Name Surname";
+"noteLabel" = "Note";
+"amountLabel" = "Amount";
+"transferButtonLabel" = "Transfer";
+"paybuttonLabel" = "PAY";
 
-
-
+// PlaceHolders
+"iban_placeHolder" = "Please enter Iban number";
+"nameSurname_placeholder" = "Please enter Name and Surname";
+"note_placeHolder" = "Please enter transfer note";
+"amount_placeHolder" = "Please enter amount";
 
 // Error Messages
 "error_title" = "Error";
 "error_FailedToFetchCardData" = "Failed to fetch card data, please try again.";
 "error_FailedToFetchTransactions" = "Failed to fetch transactions, please try again.";
 "error_FailedToSaveTransaction" = "Payment failed, please try again.";
-
+"error_incorrectIban" = "Iban number is incorrect or missing";
+"error_missingNameSurname" = "Name and Surname is missing";
+"error_missingAmount" = "Amount is missing";
 
 // Payment types
 "payment_Transfer" = "Money transfer";

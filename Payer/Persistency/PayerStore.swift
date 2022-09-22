@@ -39,13 +39,17 @@ class PayerStore : PayerStoreProtocol {
     func getCardInfo(completion: @escaping ((Result<[BankCardItem], Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            
+            var count = self.cardInfoGetAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to fetch data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.getCardInfoItems()))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.cardInfoGetAPICallCount.rawValue)
         }
 
     }
@@ -53,13 +57,16 @@ class PayerStore : PayerStoreProtocol {
     func getTransactions(completion: @escaping ((Result<[TransactionItem], Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            var count = self.transactionInfoGetAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to fetch data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.getTransactionsItems()))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.transactionInfoGetAPICallCount.rawValue)
         }
     
     }
@@ -68,52 +75,64 @@ class PayerStore : PayerStoreProtocol {
                          completion: @escaping ((Result<TransactionData, Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            var count = self.transactionInfoSaveAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to save data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.saveTransactionItems(transaction: transaction)))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.transactionInfoSaveAPICallCount.rawValue)
         }
     }
     
     func saveCardInfo(card:BankCardItem, completion: @escaping ((Result<BankCardData, Error>) -> Void)){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.cardInfoGetAPICallCount == 10 {
+            var count = self.cardInfoSaveAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to save data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.saveCardInfoItems(card: card)))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.cardInfoSaveAPICallCount.rawValue)
         }
     }
     
     func getSubscriptions(completion: @escaping ((Result<[SubscriptionItem], Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.subscriptionInfoGetAPICallCount == 10 {
+            var count = self.subscriptionInfoGetAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to fetch data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.getSubscriptions()))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.subscriptionInfoGetAPICallCount.rawValue)
         }
     }
     
     func saveSubscription(subscription: SubscriptionItem, completion: @escaping ((Result<SubscriptionData, Error>) -> Void)) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            if self.subscriptionInfoSaveAPICallCount == 10 {
+            var count = self.subscriptionInfoSaveAPICallCount
+            if count == 10 {
                 // Fail
                 let err = NSError(domain: "Failed to save data", code: 404)
                 completion(.failure(err))
             }else {
                 completion(.success(self.saveSubscription(subscription: subscription)))
             }
+            count += 1
+            UserDefaults.standard.set(count, forKey: APICallCounts.subscriptionInfoSaveAPICallCount.rawValue)
         }
     }
     
@@ -156,6 +175,8 @@ extension PayerStore {
             let cardInfoItem = BankCardItem(data: item)
             bankCards.append(cardInfoItem)
         }
+        
+        UserDefaults.standard.set(bankCards[0].userName, forKey: "CardOwner")
         return bankCards
         
     }

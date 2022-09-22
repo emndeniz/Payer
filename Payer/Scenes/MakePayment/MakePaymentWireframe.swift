@@ -32,4 +32,7 @@ final class MakePaymentWireframe: BaseWireframe<MakePaymentViewController> {
 // MARK: - Extensions -
 
 extension MakePaymentWireframe: MakePaymentWireframeInterface {
+    func moneyTransfer(){
+        navigationController?.pushWireframe(FinishPaymentWireframe())
+    }
 }

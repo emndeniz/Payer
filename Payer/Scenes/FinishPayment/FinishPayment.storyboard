@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Finish Payment View Controller-->
+        <scene sceneID="XJ1-QA-Nrj">
+            <objects>
+                <viewController storyboardIdentifier="FinishPaymentViewController" id="zIc-eW-6fX" customClass="FinishPaymentViewController" customModule="Payer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2g-4m-atm">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaW-Cg-38g">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
+                                <color key="backgroundColor" name="SecondaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9TG-EJ-wqD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNa-wF-PQh" customClass="GenericTextField" customModule="Payer" customModuleProvider="target">
+                                <rect key="frame" x="10" y="160" width="370" height="70"/>
+                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="WC5-a0-POI"/>
+                                    <constraint firstAttribute="width" constant="370" id="huv-3t-CEP"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wC8-sl-hSg" customClass="GenericTextField" customModule="Payer" customModuleProvider="target">
+                                <rect key="frame" x="10" y="254" width="370" height="70"/>
+                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="370" id="PNT-7K-Bzs"/>
+                                    <constraint firstAttribute="height" constant="70" id="aMh-q1-dW0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-uW-a9Q" customClass="GenericTextField" customModule="Payer" customModuleProvider="target">
+                                <rect key="frame" x="10" y="348" width="370" height="70"/>
+                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="17Y-3L-gS9"/>
+                                    <constraint firstAttribute="width" constant="370" id="XRA-mK-nDe"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-5t-7Df">
+                                <rect key="frame" x="16" y="700" width="358" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CH2-i1-ezj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Transfer">
+                                    <color key="baseBackgroundColor" name="PrimaryColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="transferButtonAction:" destination="zIc-eW-6fX" eventType="touchUpInside" id="O58-hu-8jd"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZw-6V-FTh" customClass="GenericTextField" customModule="Payer" customModuleProvider="target">
+                                <rect key="frame" x="10" y="454" width="370" height="70"/>
+                                <color key="backgroundColor" name="AppBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="60L-gp-ZSj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="370" id="MRT-Kj-1TG"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="N0n-UY-kSb"/>
+                                    <constraint firstAttribute="width" constant="370" id="NMD-IQ-K5V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aVU-uW-a9Q" firstAttribute="top" secondItem="wC8-sl-hSg" secondAttribute="bottom" constant="24" id="2eS-KA-2oX"/>
+                            <constraint firstItem="vaW-Cg-38g" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" id="4A4-ga-Pwh"/>
+                            <constraint firstItem="JZw-6V-FTh" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="OtJ-qm-z7c"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="JZw-6V-FTh" secondAttribute="trailing" constant="10" id="P9Q-KU-p8i"/>
+                            <constraint firstItem="wC8-sl-hSg" firstAttribute="top" secondItem="RNa-wF-PQh" secondAttribute="bottom" constant="24" id="QnX-X7-KxU"/>
+                            <constraint firstItem="vaW-Cg-38g" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="Ysl-kO-Tog"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="KR1-5t-7Df" secondAttribute="bottom" constant="50" id="ZFi-MQ-vLl"/>
+                            <constraint firstItem="JZw-6V-FTh" firstAttribute="top" secondItem="aVU-uW-a9Q" secondAttribute="bottom" constant="36" id="Zs9-w6-JI5"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="aVU-uW-a9Q" secondAttribute="trailing" constant="10" id="aEA-PN-vbu"/>
+                            <constraint firstItem="RNa-wF-PQh" firstAttribute="top" secondItem="vaW-Cg-38g" secondAttribute="bottom" constant="60" id="cW2-eH-kVK"/>
+                            <constraint firstItem="wC8-sl-hSg" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="csg-Wj-pr8"/>
+                            <constraint firstItem="vaW-Cg-38g" firstAttribute="top" secondItem="Z2g-4m-atm" secondAttribute="top" id="dCC-PF-6kI"/>
+                            <constraint firstItem="aVU-uW-a9Q" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="gCw-hr-ysn"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="KR1-5t-7Df" secondAttribute="trailing" constant="16" id="iq6-P5-QeQ"/>
+                            <constraint firstItem="KR1-5t-7Df" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="16" id="m0o-rW-UVi"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="wC8-sl-hSg" secondAttribute="trailing" constant="10" id="q13-9n-fP6"/>
+                            <constraint firstItem="RNa-wF-PQh" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="w86-28-5dF"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="RNa-wF-PQh" secondAttribute="trailing" constant="10" id="y92-Ot-E8I"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountField" destination="JZw-6V-FTh" id="eeR-H0-WlQ"/>
+                        <outlet property="ibanField" destination="RNa-wF-PQh" id="anq-rr-Gg4"/>
+                        <outlet property="nameField" destination="wC8-sl-hSg" id="HWy-tk-7UJ"/>
+                        <outlet property="noteField" destination="aVU-uW-a9Q" id="8xD-Kx-5Dr"/>
+                        <outlet property="transferButtonOutlet" destination="KR1-5t-7Df" id="eZc-FA-H6U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.61538461538458" y="302.84360189573459"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AppBackgroundColor">
+            <color red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="0.19215686274509805" green="0.25490196078431371" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryColor">
+            <color red="0.3411764705882353" green="0.66666666666666663" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

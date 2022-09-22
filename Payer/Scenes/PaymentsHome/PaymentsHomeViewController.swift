@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 final class PaymentsHomeViewController: UIViewController {
 
@@ -22,7 +23,7 @@ final class PaymentsHomeViewController: UIViewController {
     
     @IBOutlet weak var creditCardView: CreditCardView!
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var nvActivityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var transactionsTable: TransactionHistoryTable!
     var presenter: PaymentsHomePresenterInterface!
 
@@ -34,15 +35,19 @@ final class PaymentsHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
+       
+        nvActivityIndicator.startAnimating()
+       
+        transactionsTable.presenter = presenter
         
-        activityIndicator.hidesWhenStopped = true
-        presenter.viewDidLoad()
+        payButtonLabel.text = NSLocalizedString("paybuttonLabel", comment: "")
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+        presenter.viewWillAppear()
     }
 
 
@@ -52,7 +57,7 @@ final class PaymentsHomeViewController: UIViewController {
 
 extension PaymentsHomeViewController: PaymentsHomeViewInterface {
     func stopIndicator() {
-        activityIndicator.stopAnimating()
+        nvActivityIndicator.stopAnimating()
     }
     
     func updateCard(cardModel: CardUIViewModel) {

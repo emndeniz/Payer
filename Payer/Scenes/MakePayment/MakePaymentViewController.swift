@@ -59,5 +59,8 @@ extension MakePaymentViewController: UITableViewDataSource, UITableViewDelegate 
        return presenter.paymentTypeAtIndex(index: indexPath, tableView: tableView)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(index: indexPath.row)
+    }
     
 }

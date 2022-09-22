@@ -28,7 +28,11 @@ final class PaymentsHomePresenter {
         }
     }
     
-    private var transactions: [TransactionItem] = []
+    private var transactions: [TransactionItem] = [] {
+        didSet {
+            view.updateTable(transactions: transactions)
+        }
+    }
     // MARK: - Lifecycle -
 
     init(
@@ -46,7 +50,7 @@ final class PaymentsHomePresenter {
 
 extension PaymentsHomePresenter: PaymentsHomePresenterInterface {
 
-    func viewDidLoad() {
+    func viewWillAppear() {
         interactor.loadCardData {  [weak self] result in
             guard let self = self else { return }
             
@@ -86,8 +90,10 @@ extension PaymentsHomePresenter: PaymentsHomePresenterInterface {
         return transactions[index]
     }
     
-    func didSelectRow(index: Int) {
-        wireframe.routeToTransactionDetails(item: transactionAtIndex(index: index))
+    func didSelectRow(index: IndexPath) {
+        if index.section == 1 {
+            wireframe.routeToTransactionDetails(item: transactionAtIndex(index: index.row))
+        }
     }
     
     func makePayment() {

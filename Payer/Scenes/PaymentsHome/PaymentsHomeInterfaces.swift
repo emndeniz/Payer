@@ -22,10 +22,10 @@ protocol PaymentsHomeViewInterface: ViewInterface {
 }
 
 protocol PaymentsHomePresenterInterface: PresenterInterface {
-    func viewDidLoad()
+    func viewWillAppear()
     var numberOfRows: Int { get }
     func transactionAtIndex(index:Int) -> TransactionItem
-    func didSelectRow(index:Int)
+    func didSelectRow(index:IndexPath)
     func makePayment()
 }
 

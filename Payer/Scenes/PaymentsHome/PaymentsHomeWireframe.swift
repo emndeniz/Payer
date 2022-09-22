@@ -33,7 +33,7 @@ final class PaymentsHomeWireframe: BaseWireframe<PaymentsHomeViewController> {
 
 extension PaymentsHomeWireframe: PaymentsHomeWireframeInterface {
     func routeToTransactionDetails(item: TransactionItem) {
-        
+        navigationController?.pushWireframe(PaymentDetailsWireframe(transaction: item))
     }
     
     func routeToTransactionScene() {

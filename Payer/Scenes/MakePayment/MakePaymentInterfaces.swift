@@ -11,6 +11,7 @@
 import UIKit
 
 protocol MakePaymentWireframeInterface: WireframeInterface {
+    func moneyTransfer()
 }
 
 protocol MakePaymentViewInterface: ViewInterface {

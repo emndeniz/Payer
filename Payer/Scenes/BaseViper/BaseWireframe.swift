@@ -52,8 +52,8 @@ extension UIViewController {
 // MARK: - Generic Alert Functions -
 extension BaseWireframe {
     func showAlert(with title: String?, message: String?) {
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        showAlert(with: title, message: message, actions: [okAction])
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil)
+        showAlert(with: NSLocalizedString(title ?? "", comment: ""), message: NSLocalizedString(message ?? "", comment: ""), actions: [okAction])
     }
 
     func showAlert(with title: String?, message: String?, actions: [UIAlertAction]) {
