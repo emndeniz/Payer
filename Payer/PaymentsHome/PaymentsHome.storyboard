@@ -27,15 +27,18 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bce-g8-an2">
                                         <rect key="frame" x="150" y="50" width="90" height="23"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10,00 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfx-nS-Azy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfx-nS-Azy">
                                         <rect key="frame" x="40" y="77" width="310" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="UFU-nv-xfR">
+                                        <rect key="frame" x="40" y="80" width="310" height="50"/>
+                                    </activityIndicatorView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBz-hV-qcW" customClass="CreditCardView" customModule="Payer" customModuleProvider="target">
                                         <rect key="frame" x="30" y="140" width="330" height="180"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,14 +60,49 @@
                                     <constraint firstAttribute="trailing" secondItem="qfx-nS-Azy" secondAttribute="trailing" constant="40" id="Cum-mt-CRM"/>
                                     <constraint firstAttribute="trailing" secondItem="bce-g8-an2" secondAttribute="trailing" constant="150" id="O26-lM-ART"/>
                                     <constraint firstItem="JBz-hV-qcW" firstAttribute="top" secondItem="qfx-nS-Azy" secondAttribute="bottom" constant="15" id="Szy-Lb-T3c"/>
+                                    <constraint firstItem="JBz-hV-qcW" firstAttribute="top" secondItem="UFU-nv-xfR" secondAttribute="bottom" constant="10" id="WjB-XA-RUX"/>
                                     <constraint firstAttribute="bottom" secondItem="JBz-hV-qcW" secondAttribute="bottom" constant="-50" id="Xed-7H-paM"/>
                                     <constraint firstItem="qfx-nS-Azy" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="40" id="Z1q-sm-7ue"/>
                                     <constraint firstAttribute="height" constant="270" id="cdv-vL-3GG"/>
+                                    <constraint firstItem="UFU-nv-xfR" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="40" id="gWn-8O-2fX"/>
+                                    <constraint firstItem="UFU-nv-xfR" firstAttribute="top" secondItem="bce-g8-an2" secondAttribute="bottom" constant="7" id="hlc-1d-HpG"/>
                                     <constraint firstItem="qfx-nS-Azy" firstAttribute="top" secondItem="bce-g8-an2" secondAttribute="bottom" constant="4" id="iOA-Zk-Jj7"/>
+                                    <constraint firstAttribute="trailing" secondItem="UFU-nv-xfR" secondAttribute="trailing" constant="40" id="l0H-Yl-4Ny"/>
                                     <constraint firstItem="bce-g8-an2" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="top" constant="50" id="rG4-fI-GkX"/>
                                     <constraint firstAttribute="trailing" secondItem="JBz-hV-qcW" secondAttribute="trailing" constant="30" id="siS-RW-7qL"/>
                                     <constraint firstItem="JBz-hV-qcW" firstAttribute="leading" secondItem="vwP-MX-iAG" secondAttribute="leading" constant="30" id="vmg-g0-8uD"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uir-Kf-ZSB" userLabel="PayButton">
+                                <rect key="frame" x="155" y="700" width="80" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMn-7a-zY0">
+                                        <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JMn-7a-zY0" secondAttribute="bottom" constant="8" id="3Lz-Gf-kU3"/>
+                                    <constraint firstAttribute="height" constant="80" id="3ge-Sx-64g"/>
+                                    <constraint firstAttribute="trailing" secondItem="JMn-7a-zY0" secondAttribute="trailing" constant="8" id="EYy-ZD-GmD"/>
+                                    <constraint firstItem="JMn-7a-zY0" firstAttribute="leading" secondItem="Uir-Kf-ZSB" secondAttribute="leading" constant="8" id="F4s-gS-Xdu"/>
+                                    <constraint firstAttribute="width" constant="80" id="fEX-2y-IAj"/>
+                                    <constraint firstItem="JMn-7a-zY0" firstAttribute="top" secondItem="Uir-Kf-ZSB" secondAttribute="top" constant="8" id="mMb-OD-pdF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="QmB-vv-vpY" appends="YES" id="YPY-ie-DEo"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
@@ -72,22 +110,33 @@
                         <constraints>
                             <constraint firstItem="e9K-Dl-7fb" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="8" id="5ep-aX-Ry6"/>
                             <constraint firstItem="e9K-Dl-7fb" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" constant="-8" id="7AV-Du-5i2"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="Uir-Kf-ZSB" secondAttribute="trailing" constant="155" id="9NV-Gw-5ln"/>
                             <constraint firstItem="e9K-Dl-7fb" firstAttribute="top" secondItem="vwP-MX-iAG" secondAttribute="bottom" constant="50" id="ExJ-rN-Piy"/>
                             <constraint firstItem="vwP-MX-iAG" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" id="PcS-Pz-MJW"/>
                             <constraint firstItem="vwP-MX-iAG" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" id="aeA-8I-Ito"/>
+                            <constraint firstItem="Uir-Kf-ZSB" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="155" id="f49-dP-Pyh"/>
                             <constraint firstItem="vwP-MX-iAG" firstAttribute="top" secondItem="Z2g-4m-atm" secondAttribute="top" id="hS3-kt-LaB"/>
                             <constraint firstAttribute="bottom" secondItem="e9K-Dl-7fb" secondAttribute="bottom" id="nd1-5x-bKf"/>
+                            <constraint firstItem="3pi-N7-nbV" firstAttribute="bottom" secondItem="Uir-Kf-ZSB" secondAttribute="bottom" constant="30" id="v4y-3C-00d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qxb-gD-jP7"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="UFU-nv-xfR" id="9CU-Fn-GFX"/>
                         <outlet property="balanceAmount" destination="qfx-nS-Azy" id="fYs-cA-2di"/>
                         <outlet property="balanceLabel" destination="bce-g8-an2" id="1Sg-8o-SpX"/>
                         <outlet property="creditCardView" destination="JBz-hV-qcW" id="o2G-gG-2wU"/>
                         <outlet property="headerView" destination="vwP-MX-iAG" id="H3a-K0-WUC"/>
+                        <outlet property="payButtonLabel" destination="JMn-7a-zY0" id="WbG-KK-2pS"/>
+                        <outlet property="transactionsTable" destination="e9K-Dl-7fb" id="6J3-Wu-ahK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rle-ol-2Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="QmB-vv-vpY">
+                    <connections>
+                        <action selector="payButtonAction:" destination="zIc-eW-6fX" id="QnX-Sv-nRe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="733.84615384615381" y="376.77725118483409"/>
         </scene>
@@ -111,6 +160,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.99607843137254903" green="0.96078431372549022" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="0.19215686274509805" green="0.25490196078431371" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="SecondaryColor">
             <color red="0.3411764705882353" green="0.66666666666666663" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

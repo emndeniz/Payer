@@ -32,4 +32,12 @@ final class PaymentsHomeWireframe: BaseWireframe<PaymentsHomeViewController> {
 // MARK: - Extensions -
 
 extension PaymentsHomeWireframe: PaymentsHomeWireframeInterface {
+    func routeToTransactionDetails(item: TransactionItem) {
+        
+    }
+    
+    func routeToTransactionScene() {
+        
+    }
+    
 }

@@ -18,6 +18,17 @@ final class PaymentsHomePresenter {
     private let interactor: PaymentsHomeInteractorInterface
     private let wireframe: PaymentsHomeWireframeInterface
 
+    private var cardData:BankCardItem? {
+        didSet {
+            guard let item = cardData else {
+                Logger.log.warning("Trying to set nil card data")
+                return
+            }
+            view.updateCard(cardModel: converCardDataToViewModel(item: item))
+        }
+    }
+    
+    private var transactions: [TransactionItem] = []
     // MARK: - Lifecycle -
 
     init(
@@ -34,20 +45,95 @@ final class PaymentsHomePresenter {
 // MARK: - Extensions -
 
 extension PaymentsHomePresenter: PaymentsHomePresenterInterface {
-    func saveTransaction(transaction: TransactionItem) {
-        interactor.saveTransaction(transaction: transaction)
+    func viewDidLoad() {
+        interactor.loadCardData {  [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+                
+            case .success(let data):
+                // TODO: For now getting the first element. In case we want to support multiple card backend is ready.
+                self.cardData = data[0]
+              
+            case .failure(_):
+                self.wireframe.showAlert(with: "error_title", message: "error_FailedToFetchCardData")
+            }
+            
+            self.view.stopIndicator()
+        }
+        
+        interactor.loadTransactions {  [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+                
+            case .success(let data):
+                // TODO: For now getting the first element. In case we want to support multiple card backend is ready.
+                self.transactions = data
+            case .failure(_):
+                self.wireframe.showAlert(with: "error_title", message: "error_FailedToFetchCardData")
+            }
+        }
+        
     }
     
-    func saveCard(card: BankCardItem) {
-        interactor.saveCard(card: card)
+    var numberOfRows: Int {
+        return transactions.count
     }
     
-    func loadCardData() -> [BankCardItem] {
-        interactor.loadCardData()
+    func transactionAtIndex(index: Int) -> TransactionItem {
+        return transactions[index]
     }
     
-    func loadTransactions() -> [TransactionItem] {
-        interactor.loadTransactions()
+    func didSelectRow(index: Int) {
+        wireframe.routeToTransactionDetails(item: transactionAtIndex(index: index))
     }
     
+}
+
+extension PaymentsHomePresenter {
+    private func converCardDataToViewModel (item:BankCardItem) -> CardUIViewModel {
+
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 0
+        formatter.currencyCode = "EUR"
+        formatter.numberStyle = .currency
+        
+        let balanceStr = formatter.string(for: item.balance) ?? "0"
+        let vendor:CardVendors = CardVendors.init(rawValue: item.vendor ?? CardVendors.masterCard.rawValue ) ?? CardVendors.masterCard
+       
+        
+        var expDateStr = ""
+        if let date = item.expirationDate {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/YY"
+
+            expDateStr = dateFormatter.string(from:date)
+            
+        }
+       
+        return CardUIViewModel(userName: item.userName ?? "",
+                                        cardNumber: item.cardNumber ?? "",
+                                        cvv: String(item.ccv ?? 0),
+                                        expDate: expDateStr,
+                                        vendor: vendor,
+                                        balance: balanceStr)
+        
+    }
+}
+
+
+struct CardUIViewModel {
+    let userName: String
+    let cardNumber: String
+    let cvv: String
+    let expDate: String
+    let vendor: CardVendors
+    let balance: String
+}
+
+enum CardVendors: String {
+    case masterCard
+    case visa
 }

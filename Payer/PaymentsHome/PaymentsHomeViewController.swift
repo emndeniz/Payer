@@ -18,17 +18,25 @@ final class PaymentsHomeViewController: UIViewController {
     
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var balanceAmount: UILabel!
+    @IBOutlet weak var payButtonLabel: UILabel!
     
     @IBOutlet weak var creditCardView: CreditCardView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var transactionsTable: TransactionHistoryTable!
     var presenter: PaymentsHomePresenterInterface!
 
+    @IBAction func payButtonAction(_ sender: Any) {
+        
+    }
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        activityIndicator.hidesWhenStopped = true
+        presenter.viewDidLoad()
 //        let bankcard = BankCardItem(userName: "Mehmet Emin Deniz",
 //                                    cardNumber: "5123-4567-7680-6742",
 //                                    expirationDate: Date(timeIntervalSince1970: 1726934694),
@@ -36,10 +44,19 @@ final class PaymentsHomeViewController: UIViewController {
 //                                    balance: 1_578_234,
 //                                    ccv: 123)
         //presenter.saveCard(card: bankcard)
-        let card = presenter.loadCardData()
+       
         
-        creditCardView.cardNumber.text = card[0].cardNumber
-        creditCardView.userName.text = card[0].userName
+//        creditCardView.cardNumber.text = card[0].cardNumber
+//        creditCardView.userName.text = card[0].userName
+//
+//        let formatter = NumberFormatter()
+//        formatter.maximumFractionDigits = 2
+//        formatter.minimumFractionDigits = 0
+//        formatter.currencyCode = "EUR"
+//        formatter.numberStyle = .currency
+//
+//        let string = formatter.string(for: card[0].balance)
+//        balanceAmount.text = string
     }
     
     
@@ -49,8 +66,21 @@ final class PaymentsHomeViewController: UIViewController {
 // MARK: - Extensions -
 
 extension PaymentsHomeViewController: PaymentsHomeViewInterface {
-    func setCardDataToUI() {
-        
+    func stopIndicator() {
+        activityIndicator.stopAnimating()
     }
     
+    func updateCard(cardModel: CardUIViewModel) {
+        creditCardView.cardNumber.text = cardModel.cardNumber
+        creditCardView.userName.text = cardModel.userName
+        creditCardView.expDate.text = cardModel.expDate
+        creditCardView.cvvDate.text = cardModel.cvv
+        balanceAmount.text = cardModel.balance
+    }
+    
+    func updateTable(transactions: [TransactionItem]) {
+        transactionsTable.tableViewData = transactions
+    }
+    
+
 }
