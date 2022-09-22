@@ -62,8 +62,19 @@ extension FinishPaymentPresenter: FinishPaymentPresenterInterface {
             }
         }
     
-       
-        interactor.executeTransfer(iban: transferDatas[0].text, to: transferDatas[1].text, note: transferDatas[2].text, amount: decimal(string: transferDatas[3].text))
+        interactor.executeTransfer(iban: transferDatas[0].text, to: transferDatas[1].text, note: transferDatas[2].text, amount: decimal(string: transferDatas[3].text)) { [weak self] result in
+            switch  result {
+                
+            case .success(_):
+          
+                self?.wireframe.dismiss()
+            case .failure(_):
+                self?.wireframe.showAlert(with:"error_title" , message: "error_FailedToSaveTransaction")
+            }
+            self?.view.stopIndicator()
+        }
+        
+      
     }
     
 }

@@ -33,6 +33,7 @@
 "error_missingNameSurname" = "İsim soyisim eksik";
 "error_missingAmount" = "Miktar eksiks";
 
+
 // Payment types
 "payment_Transfer" = "Para transferi";
 "payment_Apple" = "Apple ödemesi";

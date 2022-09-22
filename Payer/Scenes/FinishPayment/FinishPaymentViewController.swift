@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 final class FinishPaymentViewController: UIViewController {
 
@@ -23,7 +24,8 @@ final class FinishPaymentViewController: UIViewController {
     @IBOutlet weak var transferButtonOutlet: UIButton!
     // MARK: - Lifecycle -
 
-
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,7 @@ final class FinishPaymentViewController: UIViewController {
     }
     
     @IBAction func transferButtonAction(_ sender: Any) {
+        indicator.startAnimating()
         presenter.transferButtonAction(transferDatas: [ibanField.getData(),
                                                        nameField.getData(),
                                                        noteField.getData(),
@@ -53,4 +56,8 @@ final class FinishPaymentViewController: UIViewController {
 // MARK: - Extensions -
 
 extension FinishPaymentViewController: FinishPaymentViewInterface {
+    func stopIndicator() {
+        indicator.stopAnimating()
+    }
+    
 }

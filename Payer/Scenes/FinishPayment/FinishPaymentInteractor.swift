@@ -28,7 +28,11 @@ final class FinishPaymentInteractor {
 // MARK: - Extensions -
 
 extension FinishPaymentInteractor: FinishPaymentInteractorInterface {
-    func executeTransfer(iban:String, to:String, note:String, amount:NSDecimalNumber) {
+    func executeTransfer(iban:String,
+                         to:String,
+                         note:String,
+                         amount:NSDecimalNumber,
+                         completion: @escaping ((Result<TransactionData, Error>) -> Void)) {
 
         let ownerName = UserDefaults.standard.string(forKey: "CardOwner")
         
@@ -42,13 +46,7 @@ extension FinishPaymentInteractor: FinishPaymentInteractorInterface {
                                           charge: 2)
         
         payerStore.saveTransaction(transaction: transaction) { result in
-            switch result {
-                
-            case .success(_):
-                print("succ")
-            case .failure(_):
-                print("fail")
-            }
+            completion(result)
         }
         
         

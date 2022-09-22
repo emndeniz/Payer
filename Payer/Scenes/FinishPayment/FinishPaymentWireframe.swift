@@ -32,8 +32,9 @@ final class FinishPaymentWireframe: BaseWireframe<FinishPaymentViewController> {
 // MARK: - Extensions -
 
 extension FinishPaymentWireframe: FinishPaymentWireframeInterface {
-    func stopIndicator() {
-        
+    func dismiss() {
+        viewController.dismiss(animated: true)
     }
     
+
 }

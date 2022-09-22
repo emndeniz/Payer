@@ -71,12 +71,21 @@
                                     <constraint firstAttribute="width" constant="370" id="NMD-IQ-K5V"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjJ-uV-smV" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="135" y="362" width="120" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="11J-Rb-s3n"/>
+                                    <constraint firstAttribute="width" constant="120" id="F2z-ct-RoM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3pi-N7-nbV"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aVU-uW-a9Q" firstAttribute="top" secondItem="wC8-sl-hSg" secondAttribute="bottom" constant="24" id="2eS-KA-2oX"/>
                             <constraint firstItem="vaW-Cg-38g" firstAttribute="trailing" secondItem="3pi-N7-nbV" secondAttribute="trailing" id="4A4-ga-Pwh"/>
+                            <constraint firstItem="CjJ-uV-smV" firstAttribute="centerX" secondItem="Z2g-4m-atm" secondAttribute="centerX" id="O5g-Gy-RNl"/>
                             <constraint firstItem="JZw-6V-FTh" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="OtJ-qm-z7c"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="JZw-6V-FTh" secondAttribute="trailing" constant="10" id="P9Q-KU-p8i"/>
                             <constraint firstItem="wC8-sl-hSg" firstAttribute="top" secondItem="RNa-wF-PQh" secondAttribute="bottom" constant="24" id="QnX-X7-KxU"/>
@@ -89,6 +98,7 @@
                             <constraint firstItem="vaW-Cg-38g" firstAttribute="top" secondItem="Z2g-4m-atm" secondAttribute="top" id="dCC-PF-6kI"/>
                             <constraint firstItem="aVU-uW-a9Q" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="gCw-hr-ysn"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="KR1-5t-7Df" secondAttribute="trailing" constant="16" id="iq6-P5-QeQ"/>
+                            <constraint firstItem="CjJ-uV-smV" firstAttribute="centerY" secondItem="Z2g-4m-atm" secondAttribute="centerY" id="jne-Pt-f0K"/>
                             <constraint firstItem="KR1-5t-7Df" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="16" id="m0o-rW-UVi"/>
                             <constraint firstItem="3pi-N7-nbV" firstAttribute="trailing" secondItem="wC8-sl-hSg" secondAttribute="trailing" constant="10" id="q13-9n-fP6"/>
                             <constraint firstItem="RNa-wF-PQh" firstAttribute="leading" secondItem="3pi-N7-nbV" secondAttribute="leading" constant="10" id="w86-28-5dF"/>
@@ -98,6 +108,7 @@
                     <connections>
                         <outlet property="amountField" destination="JZw-6V-FTh" id="eeR-H0-WlQ"/>
                         <outlet property="ibanField" destination="RNa-wF-PQh" id="anq-rr-Gg4"/>
+                        <outlet property="indicator" destination="CjJ-uV-smV" id="ezF-kb-NFK"/>
                         <outlet property="nameField" destination="wC8-sl-hSg" id="HWy-tk-7UJ"/>
                         <outlet property="noteField" destination="aVU-uW-a9Q" id="8xD-Kx-5Dr"/>
                         <outlet property="transferButtonOutlet" destination="KR1-5t-7Df" id="eZc-FA-H6U"/>
@@ -120,6 +131,9 @@
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

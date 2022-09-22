@@ -11,10 +11,11 @@
 import UIKit
 
 protocol FinishPaymentWireframeInterface: WireframeInterface {
-    func stopIndicator()
+    func dismiss()
 }
 
 protocol FinishPaymentViewInterface: ViewInterface {
+    func stopIndicator()
 }
 
 protocol FinishPaymentPresenterInterface: PresenterInterface {
@@ -23,5 +24,9 @@ protocol FinishPaymentPresenterInterface: PresenterInterface {
 }
 
 protocol FinishPaymentInteractorInterface: InteractorInterface {
-    func executeTransfer(iban:String, to:String, note:String, amount:NSDecimalNumber) 
+    func executeTransfer(iban:String,
+                         to:String,
+                         note:String,
+                         amount:NSDecimalNumber,
+                         completion: @escaping ((Result<TransactionData, Error>) -> Void))
 }
